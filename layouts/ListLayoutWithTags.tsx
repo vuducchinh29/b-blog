@@ -3,24 +3,33 @@
 
 import Link from '@/components/Link'
 import Tag from '@/components/Tag'
-import siteMetadata from '@/data/siteMetadata'
 import ArrowIcon from 'app/assets/images/icons/arrow1.svg'
 import tagData from 'app/tag-data.json'
-import type { Blog } from 'contentlayer/generated'
 import { slug } from 'github-slugger'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { CoreContent } from 'pliny/utils/contentlayer'
-import { formatDate } from 'pliny/utils/formatDate'
+
+const base_url = process.env.NEXT_PUBLIC_API_URI
 
 interface PaginationProps {
   totalPages: number
   currentPage: number
 }
-interface ListLayoutProps {
-  posts: CoreContent<Blog>[]
+
+export interface BlogContent {
+  id: number
   title: string
-  initialDisplayPosts?: CoreContent<Blog>[]
+  category: string
+  tags: string[]
+  content?: string
+  author: string
+  description: string
+  cover: string
+}
+interface ListLayoutProps {
+  posts: BlogContent[]
+  title: string
+  initialDisplayPosts?: BlogContent[]
   pagination?: PaginationProps
 }
 
@@ -119,27 +128,27 @@ export default function ListLayoutWithTags({
               </ul>
             </div>
           </div>
-          <div>
+          <div className="w-full sm:w-[calc(100%-358px-24px)]">
             <ul className="space-y-[13px] lg:space-y-4">
               {displayPosts.map((post) => {
-                const { path, date, title, summary, tags } = post
+                const { id, title, tags, cover } = post
                 return (
-                  <li className="border border-primary" key={path}>
-                    <Link href={`/${path}`} className="text-gray-900 dark:text-gray-100 ">
+                  <li className="border border-primary" key={id}>
+                    <Link href={`/${id}`} className="text-gray-900 dark:text-gray-100 ">
                       <div className="space-y-2 p-3 lg:p-4">
-                        <div className="">
+                        {/* <div className="">
                           <dl>
                             <dt className="sr-only">Published on</dt>
                             <dd className="text-xs font-bold text-primary">
                               <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
                             </dd>
                           </dl>
-                        </div>
+                        </div> */}
                         <div className="flex gap-[15px] lg:gap-5 ">
                           <img
-                            src="https://picsum.photos/200/150"
+                            src={`${base_url}/assets/${cover}?quality=25`}
                             alt=""
-                            className="w-[125px] lg:w-[170px]"
+                            className="h-[142px] w-[125px] object-cover lg:w-[170px]"
                           />
                           <article className="flex flex-col justify-between space-y-2 xl:space-y-0">
                             <div className="space-y-3">
@@ -154,7 +163,7 @@ export default function ListLayoutWithTags({
                                 </div>
                               </div>
                               <div className="prose line-clamp-3 max-w-none text-base font-medium text-primary">
-                                {summary}
+                                {title}
                               </div>
                             </div>
                             <div className="flex items-center">

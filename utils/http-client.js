@@ -2,7 +2,7 @@ import axios from 'axios'
 import queryString from 'query-string'
 
 const HttpClient = axios.create({
-  baseURL: process.env.REACT_APP_API_URI,
+  baseURL: process.env.NEXT_PUBLIC_API_URI,
   headers: {
     'content-type': 'application/json',
   },
