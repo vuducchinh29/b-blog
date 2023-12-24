@@ -2,6 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong {
+    @apply font-bold;
+  }
+}
+
+.def-shadow {
+  box-shadow: 12.07059px 18.10588px 25.48236px 0px rgba(51, 51, 51, 0.2);
+}
+
+.footer-shadow {
+  box-shadow: 0px -8px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.social-shadow {
+  filter: drop-shadow(0px 4px 14px rgba(0, 0, 0, 0.15));
+}
+
+.home-title {
+  @apply text-left font-poppins text-xl font-bold text-secondary lg:text-[32px];
+}
+
+.objective-item-shadow {
+  box-shadow: 0px 4px 94px 0px rgba(0, 0, 0, 0.15);
+}
+
+.blue-invester-sw.swiper-horizontal > .swiper-pagination-bullets,
+.blue-invester-sw.swiper-pagination-bullets.swiper-pagination-horizontal {
+  @apply flex w-full justify-end lg:px-20;
+}
+
+.swiper-pagination-bullet {
+  @apply h-[15px] w-[15px] rounded-full bg-[#DDE0E4] !opacity-100 transition-all duration-200;
+}
+
+.swiper-pagination-bullet-active {
+  @apply h-[15px] w-[45px] rounded-full bg-primary;
+}
+
+.yellow-invester-sw .swiper-pagination-bullet-active {
+  @apply h-[15px] w-[45px] rounded-full bg-secondary;
+}
+
+.blog-paragraph * {
+  @apply text-base leading-[28px];
+}
+
+.blog-paragraph a {
+  @apply font-semibold hover:underline;
+}
+
+
 .task-list-item::before {
   @apply hidden;
 }

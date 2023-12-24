@@ -1,15 +1,17 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 'use client'
 
-import { usePathname } from 'next/navigation'
-import { slug } from 'github-slugger'
-import { formatDate } from 'pliny/utils/formatDate'
-import { CoreContent } from 'pliny/utils/contentlayer'
-import type { Blog } from 'contentlayer/generated'
 import Link from '@/components/Link'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
+import ArrowIcon from 'app/assets/images/icons/arrow1.svg'
 import tagData from 'app/tag-data.json'
+import type { Blog } from 'contentlayer/generated'
+import { slug } from 'github-slugger'
+import Image from 'next/image'
+import { usePathname } from 'next/navigation'
+import { CoreContent } from 'pliny/utils/contentlayer'
+import { formatDate } from 'pliny/utils/formatDate'
 
 interface PaginationProps {
   totalPages: number
@@ -30,9 +32,9 @@ function Pagination({ totalPages, currentPage }: PaginationProps) {
 
   return (
     <div className="space-y-2 pb-8 pt-6 md:space-y-5">
-      <nav className="flex justify-between">
+      <nav className="flex justify-between font-bold text-primary">
         {!prevPage && (
-          <button className="cursor-auto disabled:opacity-50" disabled={!prevPage}>
+          <button className="cursor-auto uppercase disabled:opacity-50" disabled={!prevPage}>
             Previous
           </button>
         )}
@@ -40,20 +42,21 @@ function Pagination({ totalPages, currentPage }: PaginationProps) {
           <Link
             href={currentPage - 1 === 1 ? `/${basePath}/` : `/${basePath}/page/${currentPage - 1}`}
             rel="prev"
+            className="uppercase"
           >
             Previous
           </Link>
         )}
-        <span>
+        <span className="">
           {currentPage} of {totalPages}
         </span>
         {!nextPage && (
-          <button className="cursor-auto disabled:opacity-50" disabled={!nextPage}>
+          <button className="cursor-auto uppercase disabled:opacity-50" disabled={!nextPage}>
             Next
           </button>
         )}
         {nextPage && (
-          <Link href={`/${basePath}/page/${currentPage + 1}`} rel="next">
+          <Link href={`/${basePath}/page/${currentPage + 1}`} rel="next" className="uppercase">
             Next
           </Link>
         )}
@@ -77,37 +80,34 @@ export default function ListLayoutWithTags({
 
   return (
     <>
-      <div>
+      <div className="px-6 lg:px-20">
         <div className="pb-6 pt-6">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:hidden sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             {title}
           </h1>
         </div>
-        <div className="flex sm:space-x-24">
-          <div className="hidden h-full max-h-screen min-w-[280px] max-w-[280px] flex-wrap overflow-auto rounded bg-gray-50 pt-5 shadow-md dark:bg-gray-900/70 dark:shadow-gray-800/40 sm:flex">
+        <div className="flex sm:space-x-6">
+          <div className="hidden h-full max-h-screen min-w-[358px] max-w-[358px] flex-wrap overflow-auto rounded bg-primary pt-5 shadow-md shadow-gray-800/40 sm:flex">
             <div className="px-6 py-4">
               {pathname.startsWith('/blog') ? (
-                <h3 className="font-bold uppercase text-primary-500">All Posts</h3>
+                <h3 className="text-2xl font-bold uppercase text-secondary">All Posts</h3>
               ) : (
-                <Link
-                  href={`/blog`}
-                  className="font-bold uppercase text-gray-700 hover:text-primary-500 dark:text-gray-300 dark:hover:text-primary-500"
-                >
+                <Link href={`/blog`} className="text-2xl font-bold uppercase text-secondary ">
                   All Posts
                 </Link>
               )}
               <ul>
                 {sortedTags.map((t) => {
                   return (
-                    <li key={t} className="my-3">
+                    <li key={t} className="my-3 list-inside list-disc text-white">
                       {pathname.split('/tags/')[1] === slug(t) ? (
-                        <h3 className="inline px-3 py-2 text-sm font-bold uppercase text-primary-500">
+                        <h3 className="inline px-3 py-2 text-base font-bold uppercase text-white">
                           {`${t} (${tagCounts[t]})`}
                         </h3>
                       ) : (
                         <Link
                           href={`/tags/${slug(t)}`}
-                          className="px-3 py-2 text-sm font-medium uppercase text-gray-500 hover:text-primary-500 dark:text-gray-300 dark:hover:text-primary-500"
+                          className="px-3 py-2 text-base font-bold uppercase text-white hover:underline"
                           aria-label={`View posts tagged ${t}`}
                         >
                           {`${t} (${tagCounts[t]})`}
@@ -120,35 +120,53 @@ export default function ListLayoutWithTags({
             </div>
           </div>
           <div>
-            <ul>
+            <ul className="space-y-[13px] lg:space-y-4">
               {displayPosts.map((post) => {
                 const { path, date, title, summary, tags } = post
                 return (
-                  <li key={path} className="flex py-5">
-                    <img src="https://picsum.photos/200/150" alt="" className="pr-5" />
-                    <article className="flex flex-col space-y-2 xl:space-y-0">
-                      <dl>
-                        <dt className="sr-only">Published on</dt>
-                        <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                          <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
-                        </dd>
-                      </dl>
-                      <div className="space-y-3">
-                        <div>
-                          <h2 className="text-2xl font-bold leading-8 tracking-tight">
-                            <Link href={`/${path}`} className="text-gray-900 dark:text-gray-100">
-                              {title}
-                            </Link>
-                          </h2>
-                          <div className="flex flex-wrap">
-                            {tags?.map((tag) => <Tag key={tag} text={tag} />)}
-                          </div>
+                  <li className="border border-primary" key={path}>
+                    <Link href={`/${path}`} className="text-gray-900 dark:text-gray-100 ">
+                      <div className="space-y-2 p-3 lg:p-4">
+                        <div className="">
+                          <dl>
+                            <dt className="sr-only">Published on</dt>
+                            <dd className="text-xs font-bold text-primary">
+                              <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
+                            </dd>
+                          </dl>
                         </div>
-                        <div className="prose max-w-none text-gray-500 dark:text-gray-400">
-                          {summary}
+                        <div className="flex gap-[15px] lg:gap-5 ">
+                          <img
+                            src="https://picsum.photos/200/150"
+                            alt=""
+                            className="w-[125px] lg:w-[170px]"
+                          />
+                          <article className="flex flex-col justify-between space-y-2 xl:space-y-0">
+                            <div className="space-y-3">
+                              <div>
+                                <h2 className="text-2xl font-bold leading-8 tracking-tight">
+                                  {/* <Link href={`/${path}`} className="text-gray-900 dark:text-gray-100">
+                                {title}
+                              </Link> */}
+                                </h2>
+                                <div className="flex flex-wrap">
+                                  {tags?.map((tag) => <Tag key={tag} text={tag} />)}
+                                </div>
+                              </div>
+                              <div className="prose line-clamp-3 max-w-none text-base font-medium text-primary">
+                                {summary}
+                              </div>
+                            </div>
+                            <div className="flex items-center">
+                              <p className="font-rajdhani text-base font-bold text-secondary">
+                                READ MORE
+                              </p>
+                              <Image src={ArrowIcon} alt="arrow icon" className="h-4 w-4" />
+                            </div>
+                          </article>
                         </div>
                       </div>
-                    </article>
+                    </Link>
                   </li>
                 )
               })}

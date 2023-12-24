@@ -14,7 +14,24 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
+    colors: {
+      ...colors,
+      primary: '#0F1E79',
+      secondary: '#D69F00',
+    },
     extend: {
+      backgroundColor: {
+        primary: '#0F1E79',
+        secondary: '#D69F00',
+      },
+      textColor: {
+        primary: '#0F1E79',
+        secondary: '#D69F00',
+      },
+      borderColor: {
+        primary: '#0F1E79',
+        secondary: '#D69F00',
+      },
       lineHeight: {
         11: '2.75rem',
         12: '3rem',
@@ -23,6 +40,9 @@ module.exports = {
       },
       fontFamily: {
         sans: ['var(--font-space-grotesk)', ...fontFamily.sans],
+        poppins: ['var(--font-space-poppins)', ...fontFamily.sans],
+        rajdhani: ['var(--font-space-rajdhani)', ...fontFamily.sans],
+        sen: ['var(--font-space-sen)', ...fontFamily.sans],
       },
       colors: {
         primary: colors.pink,
