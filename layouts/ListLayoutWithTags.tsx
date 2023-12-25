@@ -134,7 +134,7 @@ export default function ListLayoutWithTags({
                 const { id, title, tags, cover } = post
                 return (
                   <li className="border border-primary" key={id}>
-                    <Link href={`/${id}`} className="text-gray-900 dark:text-gray-100 ">
+                    <Link href={`/blog/${id}`} className="text-gray-900 dark:text-gray-100 ">
                       <div className="space-y-2 p-3 lg:p-4">
                         {/* <div className="">
                           <dl>

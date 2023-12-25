@@ -1,18 +1,15 @@
 import 'css/prism.css'
 import 'katex/dist/katex.css'
 
-import PageTitle from '@/components/PageTitle'
-import { components } from '@/components/MDXComponents'
-import { MDXLayoutRenderer } from 'pliny/mdx-components'
-import { sortPosts, coreContent, allCoreContent } from 'pliny/utils/contentlayer'
-import { allBlogs, allAuthors } from 'contentlayer/generated'
-import type { Authors, Blog } from 'contentlayer/generated'
-import PostSimple from '@/layouts/PostSimple'
-import PostLayout from '@/layouts/PostLayout'
-import PostBanner from '@/layouts/PostBanner'
-import { Metadata } from 'next'
 import siteMetadata from '@/data/siteMetadata'
+import PostBanner from '@/layouts/PostBanner'
+import PostLayout from '@/layouts/PostLayout'
+import PostSimple from '@/layouts/PostSimple'
+import blogAPI from 'apis/blog-api'
+import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+
+export const base_url = process.env.NEXT_PUBLIC_API_URI
 
 const defaultLayout = 'PostLayout'
 const layouts = {
@@ -27,23 +24,25 @@ export async function generateMetadata({
   params: { slug: string[] }
 }): Promise<Metadata | undefined> {
   const slug = decodeURI(params.slug.join('/'))
-  const post = allBlogs.find((p) => p.slug === slug)
-  const authorList = post?.authors || ['default']
-  const authorDetails = authorList.map((author) => {
-    const authorResults = allAuthors.find((p) => p.slug === author)
-    return coreContent(authorResults as Authors)
-  })
+  const post = {
+    id: 2,
+    title: 'FriendTech Là Gì? Giải Mã Nền Tảng SocialFi Hot Nhất Hiện Nay',
+    category: 'Blog',
+    tags: ['FriendTech', 'SocialFi'],
+    author: 'B.Army Research',
+    description:
+      'FriendTech là gì? Tại sao FriendTech lại thu hút người dùng và các KOL sử dụng? Hãy cùng B.Army tìm hiểu về dự án SocialFi độc đáo này trong bài viết ngày hôm nay.',
+    cover: 'e86fb8f7-55c2-4ace-83aa-66582ea93879',
+    content: '',
+  }
+  const author = post?.author || ['default']
   if (!post) {
     return
   }
 
-  const publishedAt = new Date(post.date).toISOString()
-  const modifiedAt = new Date(post.lastmod || post.date).toISOString()
-  const authors = authorDetails.map((author) => author.name)
-  let imageList = [siteMetadata.socialBanner]
-  if (post.images) {
-    imageList = typeof post.images === 'string' ? [post.images] : post.images
-  }
+  const publishedAt = new Date().toISOString()
+  const modifiedAt = new Date().toISOString()
+  const imageList = [`${base_url}/assets/${post.cover}?quality=25`]
   const ogImages = imageList.map((img) => {
     return {
       url: img.includes('http') ? img : siteMetadata.siteUrl + img,
@@ -52,70 +51,62 @@ export async function generateMetadata({
 
   return {
     title: post.title,
-    description: post.summary,
+    description: post.description,
     openGraph: {
       title: post.title,
-      description: post.summary,
+      description: post.description,
       siteName: siteMetadata.title,
-      locale: 'en_US',
+      locale: 'vi_VN',
       type: 'article',
       publishedTime: publishedAt,
       modifiedTime: modifiedAt,
       url: './',
       images: ogImages,
-      authors: authors.length > 0 ? authors : [siteMetadata.author],
+      authors: author,
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
-      description: post.summary,
+      description: post.description,
       images: imageList,
     },
   }
 }
 
 export const generateStaticParams = async () => {
-  const paths = allBlogs.map((p) => ({ slug: p.slug.split('/') }))
+  const paths = (await blogAPI.getBlogs()).data.map((_) => {
+    return { id: _.id + '' }
+  })
 
   return paths
 }
 
-export default async function Page({ params }: { params: { slug: string[] } }) {
-  const slug = decodeURI(params.slug.join('/'))
-  // Filter out drafts in production
-  const sortedCoreContents = allCoreContent(sortPosts(allBlogs))
-  const postIndex = sortedCoreContents.findIndex((p) => p.slug === slug)
-  if (postIndex === -1) {
+async function getData(id: string) {
+  const post = (await blogAPI.getBlogById(Number(id))).data
+
+  return post
+}
+
+export default async function Page({ params }: { params: { id: string } }) {
+  const post = await getData(params.id)
+  if (!post) {
     return notFound()
   }
 
-  const prev = sortedCoreContents[postIndex + 1]
-  const next = sortedCoreContents[postIndex - 1]
-  const post = allBlogs.find((p) => p.slug === slug) as Blog
-  const authorList = post?.authors || ['default']
-  const authorDetails = authorList.map((author) => {
-    const authorResults = allAuthors.find((p) => p.slug === author)
-    return coreContent(authorResults as Authors)
-  })
-  const mainContent = coreContent(post)
-  const jsonLd = post.structuredData
-  jsonLd['author'] = authorDetails.map((author) => {
-    return {
-      '@type': 'Person',
-      name: author.name,
-    }
-  })
+  const prev = { path: '/blog/1', title: '' }
+  const next = { path: '/blog/2', title: '' }
 
-  const Layout = layouts[post.layout || defaultLayout]
+  const mainContent = post
+
+  const Layout = layouts.PostBanner
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <Layout content={mainContent} authorDetails={authorDetails} next={next} prev={prev}>
-        <MDXLayoutRenderer code={post.body.code} components={components} toc={post.toc} />
+      <Layout content={mainContent} next={next} prev={prev}>
+        {/* <MDXLayoutRenderer code={post.body.code} components={components} toc={post.toc} /> */}
+        {/* <div className="" dangerouslySetInnerHTML={{ __html: '' }}>
+          {}
+        </div> */}
       </Layout>
     </>
   )
