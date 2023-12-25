@@ -81,7 +81,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t-primary hidden justify-center border-t px-6 py-[29px] text-[13px] font-bold text-primary lg:flex lg:px-20">
+      <div className="hidden justify-center border-t border-t-primary px-6 py-[29px] text-[13px] font-bold text-primary lg:flex lg:px-20">
         Copyright ® 2023 by B.Army
       </div>
     </footer>

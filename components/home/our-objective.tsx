@@ -109,10 +109,10 @@ const ObjectiveItem = ({ image, title, detail }) => {
       >
         <Image src={image} alt="" className="" />
 
-        <h3 className="text-primary pb-2 pt-[11px] font-bold lg:pb-4 lg:pt-[23px]">{title}</h3>
+        <h3 className="pb-2 pt-[11px] font-bold text-primary lg:pb-4 lg:pt-[23px]">{title}</h3>
 
         <p
-          className="text-primary text-center text-xs leading-[22.5px] 
+          className="text-center text-xs leading-[22.5px] text-primary 
           lg:text-left lg:text-sm lg:font-bold lg:leading-[26px]"
         >
           {detail}

@@ -38,7 +38,7 @@ export const TeamPartner = () => {
       <div className="relative z-[2] px-6 font-poppins lg:px-20">
         <h2 className="home-title !text-primary">Team & Partner</h2>
 
-        <p className="text-primary py-4 text-sm leading-[26px] lg:pb-7 lg:pt-6 lg:font-bold">
+        <p className="py-4 text-sm leading-[26px] text-primary lg:pb-7 lg:pt-6 lg:font-bold">
           {/* Our passionate team of experts and blockchain enthusiasts harnesses
           diverse backgrounds and extensive experience to empower startups in
           their blockchain journey. Through strategic partnerships with renowned

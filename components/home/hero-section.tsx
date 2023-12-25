@@ -5,7 +5,6 @@ import AcceleratorIcon from 'app/assets/images/join-our-accelerator-program.png'
 import UptrendIcon from 'app/assets/images/uptrend.svg'
 import Image from 'next/image'
 
-
 const infoList = [
   {
     name: 'Tiktok Network views',
@@ -105,7 +104,7 @@ const InfoBox = ({ value, name }) => {
       className="def-shadow col-span-1 flex h-[74px] flex-col items-center justify-center rounded-[10.73px]
       bg-white lg:h-[111px] lg:p-6"
     >
-      <p className="text-primary text-base font-bold lg:text-2xl">{value}</p>
+      <p className="text-base font-bold text-primary lg:text-2xl">{value}</p>
       <p className="line-clamp-1 text-center text-xs font-bold text-[#404040] lg:text-lg">{name}</p>
     </div>
   )

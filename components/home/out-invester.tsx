@@ -13,7 +13,7 @@ export const OutInvester = () => {
   return (
     <section className="pt-6 lg:pt-12">
       <div className="px-6 lg:px-20">
-        <h2 className="home-title !text-primary !leading-[66px]">Our Investor</h2>
+        <h2 className="home-title !leading-[66px] !text-primary">Our Investor</h2>
       </div>
 
       <div className="pt-3 lg:pt-4">

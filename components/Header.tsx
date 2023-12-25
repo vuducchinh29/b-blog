@@ -49,7 +49,7 @@ const Header = () => {
                 {navList.map((_, idx) => (
                   <Link
                     key={idx}
-                    className="text-primary group relative text-2xl font-bold leading-[50px]"
+                    className="group relative text-2xl font-bold leading-[50px] text-primary"
                     href={_.href}
                     scroll
                   >
