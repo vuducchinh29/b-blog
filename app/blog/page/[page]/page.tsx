@@ -1,4 +1,4 @@
-import ListLayout, { BlogContent } from '@/layouts/ListLayoutWithTags'
+import ListLayout from '@/layouts/ListLayoutWithTags'
 import blogAPI from 'apis/blog-api'
 
 const POSTS_PER_PAGE = 100
@@ -6,7 +6,7 @@ const POSTS_PER_PAGE = 100
 export const generateStaticParams = async () => {
   const posts = (await blogAPI.getBlogs(POSTS_PER_PAGE)).data
   const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE)
-  const paths = Array.from({ length: totalPages }, (_: BlogContent) => ({ page: _.id.toString() }))
+  const paths = Array.from({ length: totalPages }, (_, i) => ({ page: (i + 1).toString() }))
 
   return paths
 }

@@ -17,7 +17,7 @@ interface PaginationProps {
 }
 
 export interface BlogContent {
-  id: number
+  id: number | 0
   title: string
   category: string
   tags: string[]
