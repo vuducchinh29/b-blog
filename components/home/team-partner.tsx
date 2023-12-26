@@ -2,27 +2,108 @@ import Partner01Img from 'app/assets/images/partner-01.svg'
 import Partner02Img from 'app/assets/images/partner-02.svg'
 import Partner03Img from 'app/assets/images/partner-03.svg'
 import Partner04Img from 'app/assets/images/partner-04.svg'
+import Partner05Img from 'app/assets/images/partner-05.svg'
+import Partner06Img from 'app/assets/images/partner-06.svg'
+import Image from 'next/image'
 
 const partnerList = [
   {
     avatar: Partner01Img,
-    name: 'John Doe',
-    position: 'CEO & Managing Partner',
+    name: 'THEANH 28',
+    content1: [
+      {
+        c1: '200+',
+        c2: 'Multichannel communities.',
+      },
+      {
+        c1: '100M+',
+        c2: 'Followers.',
+      },
+      {
+        c1: '10M+',
+        c2: 'Growth rate follower / year.',
+      },
+    ],
+    content2: '',
   },
   {
     avatar: Partner02Img,
-    name: 'Jane Smith',
-    position: 'COO & Managing Partner',
+    name: 'DC GROUP',
+    content1: [
+      {
+        c1: '200+',
+        c2: 'Multichannel communities.',
+      },
+      {
+        c1: '100M+',
+        c2: 'Followers.',
+      },
+      {
+        c1: '10M+',
+        c2: 'Growth rate follower / year.',
+      },
+    ],
+    content2: '',
   },
   {
     avatar: Partner03Img,
-    name: 'Bob Miller',
-    position: 'Investment Director',
+    name: 'LAUNCHZONE | REDAO',
+    content1: [
+      {
+        c1: '200+',
+        c2: 'Multichannel communities.',
+      },
+      {
+        c1: '100M+',
+        c2: 'Followers.',
+      },
+      {
+        c1: '10M+',
+        c2: 'Growth rate follower / year.',
+      },
+    ],
+    content2: '',
   },
   {
     avatar: Partner04Img,
-    name: 'Lisa Wong',
-    position: 'Operations Manager',
+    name: 'METAHUB',
+    content1: [
+      {
+        c1: '200+',
+        c2: 'Multichannel communities.',
+      },
+      {
+        c1: '100M+',
+        c2: 'Followers.',
+      },
+      {
+        c1: '10M+',
+        c2: 'Growth rate follower / year.',
+      },
+    ],
+    content2: '',
+  },
+  {
+    avatar: Partner05Img,
+    name: 'VIETNAM BLOCKCHAIN',
+    content1: [],
+    content2: (
+      <p className="">
+        The first blockchain organization that was legally recognized in Vietnam .
+        <span className="text-primary">30K+</span> Members |{' '}
+        <span className="text-primary">50+</span> Partners
+      </p>
+    ),
+  },
+  {
+    avatar: Partner06Img,
+    name: 'KOLSNETWORK',
+    content1: [],
+    content2: (
+      <p className="">
+        <span className="text-primary">100+</span> global and Vietnamese KOLs on Twitter.
+      </p>
+    ),
   },
 ]
 
@@ -31,42 +112,54 @@ export const TeamPartner = () => {
     <section className="relative pb-6 pt-6 lg:pb-16 lg:pt-16">
       <div className="absolute -top-[111px] left-0" id="team-partner"></div>
       <div
-        className="absolute -bottom-[68px] -right-[145px] z-[1] hidden aspect-square w-[443px] 
-        rounded-full bg-secondary
+        className="absolute -right-[145px] top-[20px] z-[1] hidden aspect-square w-[296px] 
+        rounded-full bg-primary
+        lg:block"
+      ></div>
+      <div
+        className="absolute -left-[145px] bottom-[20px] z-[1] hidden aspect-square w-[296px] 
+        rounded-full bg-primary
         lg:block"
       ></div>
       <div className="relative z-[2] px-6 font-poppins lg:px-20">
         <h2 className="home-title !text-primary">Team & Partner</h2>
 
-        <p className="py-4 text-sm leading-[26px] text-primary lg:pb-7 lg:pt-6 lg:font-bold">
-          {/* Our passionate team of experts and blockchain enthusiasts harnesses
-          diverse backgrounds and extensive experience to empower startups in
-          their blockchain journey. Through strategic partnerships with renowned
-          organizations and leading technology firms, we amplify our network,
-          resources, and expertise. This ensures startups receive unparalleled
-          support for success. Together, we cultivate a dynamic ecosystem that
-          fosters collaboration, fuels growth, and accelerates the adoption of
-          blockchain technology. */}
-          Led by John and Jane, our team brings together diverse expertise across technology,
-          investing, and startup operations. We have experience building multiple successful
-          companies from the ground up.
+        <p className="py-4 text-sm leading-[26px] text-primary lg:pb-7 lg:pt-6 lg:text-xl lg:font-bold">
+          We collaborate closely with best-in-class partners across the blockchain ecosystem
         </p>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-7">
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-7">
           {partnerList.map((_, idx) => (
             <div
               key={idx}
-              className="col-span-1 flex h-[258px] flex-col items-center justify-center rounded-[20px] bg-primary"
+              className="col-span-1 flex h-[452px] flex-col items-center bg-secondary px-6 pb-[38px] pt-[52px]"
             >
-              <img src={_.avatar} alt="avatar" className="h-[125px]" />
-              <p className="text-base font-bold leading-[32px] text-white">{_.name}</p>
-              <p className="mt-0.5 text-base font-bold leading-[32px] text-[#e8e8e8]">
-                {_.position}
-              </p>
+              <Image src={_.avatar} alt="avatar" className="mb-[27px] h-[125px]" />
+              <p className="mb-[8px] text-base font-bold leading-[32px] text-primary">{_.name}</p>
+              {_.content1.length ? (
+                <div className="space-y-1 font-poppins text-base font-semibold">
+                  {_.content1.map((content, idx) => (
+                    <div className="flex" key={idx}>
+                      <p className="w-[73px] text-primary">{content.c1}</p>
+                      <p className="text-white">{content.c2}</p>
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+
+              {_.content2 ? (
+                <div className="text-center font-poppins text-base font-semibold text-white">
+                  {_.content2}
+                </div>
+              ) : null}
             </div>
           ))}
         </div>
       </div>
+
+      <p className="mt-[29px] max-w-[43px] text-center font-poppins text-base font-bold leading-[50.04px] text-primary lg:mt-[53px] lg:max-w-none lg:text-2xl">
+        Let us know if you'd like an introduction to any of our valuable partners!
+      </p>
     </section>
   )
 }

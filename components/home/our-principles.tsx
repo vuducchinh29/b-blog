@@ -3,12 +3,10 @@
 import 'swiper/css'
 import 'swiper/css/pagination'
 
+import OurTeamImg01 from 'app/assets/images/our-team-01.png'
+import OurTeamImg02 from 'app/assets/images/our-team-02.png'
 import PrinciplesNumberImg01 from 'app/assets/images/principles-number-01.png'
 import PrinciplesNumberImg02 from 'app/assets/images/principles-number-02.png'
-import PrinciplesNumberImg03 from 'app/assets/images/principles-number-03.png'
-import PrinciplesImg01 from 'app/assets/images/principles01.png'
-import PrinciplesImg02 from 'app/assets/images/principles02.png'
-import PrinciplesImg03 from 'app/assets/images/principles03.png'
 import Image from 'next/image'
 import { useState } from 'react'
 import { Autoplay, Pagination } from 'swiper/modules'
@@ -16,25 +14,24 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 const ourPrinciplesList = [
   {
-    title: 'Trust and Integrity',
-    detail:
-      'We hold ourselves to the highest standards of trust and integrity, fostering strong relationships built on transparency, honesty, and reliability. With ethical practices at the core of our values, we prioritize the long-term interests of the startups we support, ensuring their trust in us remains unwavering.',
-    image: PrinciplesImg01,
+    title: 'THANH DAO',
+    detail: [
+      'Co-Founder & CTO of LaunchZone, Head of Investment & Application at VBA',
+      'As the Former CTO of Nexty, or former CEO of Ezdefi e-wallet, Thanh Dao is a famous influencer and guest speaker/ judge of many blockchain events in Vietnam such as Vietnamese NFT & GameFi expo, Blockchain olympiad 2021, Binance Hackathon Vietnam, etc.',
+    ],
+    image: OurTeamImg01,
     numImg: PrinciplesNumberImg01,
   },
   {
-    title: 'Long-term Partnership',
-    detail:
-      'We believe in cultivating long-term partnerships built on mutual trust, shared goals, and comprehensive support. As a committed partner, we provide ongoing guidance, resources, and strategic advice to help startups grow and succeed. Throughout their journey, we stand by startups as a trusted partner, assisting them in overcoming challenges and capturing opportunities.',
-    image: PrinciplesImg02,
+    title: 'Mr. LOGAN',
+    detail: [
+      'Co-Founder & CMO of LaunchZone',
+      'Founder of Mayor Capital',
+      'Founder of Crypto Sale Mastery',
+      'Logan is known as a famous influencer, as well as a community building expert in Vietnam’s financial industry',
+    ],
+    image: OurTeamImg02,
     numImg: PrinciplesNumberImg02,
-  },
-  {
-    title: 'Innovation and Adaptability',
-    detail:
-      'At the heart of our culture are innovation and adaptability. We encourage startups to explore cutting-edge ideas and technologies by pushing boundaries in the blockchain landscape. By staying ahead of trends and emerging opportunities, we foster an agile and adaptable environment empowering startups to thrive in the ever-evolving blockchain world.',
-    image: PrinciplesImg03,
-    numImg: PrinciplesNumberImg03,
   },
 ]
 
@@ -43,24 +40,25 @@ export const OurPrinciples = () => {
   const [slideIndex, setSlideIndex] = useState(0)
 
   return (
-    <section className="mt-[38px] bg-white p-0 lg:mt-[59px] lg:bg-primary lg:pb-[77px] lg:pt-[25px]">
+    <section className="mt-[38px] bg-white p-0 lg:mt-[16px] lg:bg-primary lg:pb-[77px] lg:pt-[25px]">
       <div className="">
         <div className="ml-20 hidden items-center text-[32px] font-bold leading-[67px] lg:flex">
           <div className="relative z-[2] text-primary">
-            <span className="relative z-[2]">Our Prin</span>
+            <p className="relative z-[2] font-bold">
+              Our <span className="font-bold text-white">Team</span>
+            </p>
             <div
-              className="absolute -right-2 -top-[40%] z-[1] hidden aspect-square 
+              className="absolute -right-8 -top-[40%] z-[1] hidden aspect-square 
               w-[443px] -translate-y-1/2 rounded-full bg-secondary lg:block"
             ></div>
           </div>
-          <p className="text-white">ciples</p>
         </div>
         <h2 className="home-title ml-6 lg:hidden">Our Principles</h2>
       </div>
 
       <div className="mt-4 bg-primary pt-10 lg:mt-0 lg:hidden">
         <Swiper
-          className="yellow-invester-sw pb-[74px]"
+          className="yellow-invester-sw !pb-[74px]"
           modules={[Autoplay, Pagination]}
           effect="cards"
           spaceBetween={16}
@@ -82,7 +80,13 @@ export const OurPrinciples = () => {
                   {_.title}
                 </h3>
 
-                <p className="text-sm text-secondary">{_.detail}</p>
+                <ul className="">
+                  {_.detail.map((item, idx) => (
+                    <li className="list-inside list-disc text-sm text-secondary" key={idx}>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </SwiperSlide>
           ))}
@@ -92,7 +96,7 @@ export const OurPrinciples = () => {
       <div className="hidden space-y-[47px] bg-primary pl-[120px] pr-[90px] lg:block">
         {ourPrinciplesList.map((_, idx) => (
           <div className="flex items-center" key={idx}>
-            <div className="w-[216px]">
+            <div className="relative z-[2] w-[278px]">
               <Image src={_.image} alt={_.title} className="w-full" />
             </div>
 
@@ -106,7 +110,13 @@ export const OurPrinciples = () => {
 
             <div className="flex-1 space-y-3 font-poppins text-secondary">
               <h3 className="text-xl font-bold leading-[37.5px]">{_.title}</h3>
-              <p className="text-sm font-bold leading-[26px]">{_.detail}</p>
+              <ul className="">
+                {_.detail.map((item, idx) => (
+                  <li className="list-inside list-disc text-sm font-bold leading-[26px]" key={idx}>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         ))}

@@ -52,7 +52,7 @@ export const HeroSection = () => {
             About us
           </h2>
 
-          <p className="mt-2 text-base font-bold leading-[20px] lg:mt-6 lg:text-[40px] lg:leading-[50px]">
+          <p className="mt-2 text-base font-bold uppercase leading-[20px] lg:mt-6 lg:text-[40px] lg:leading-[50px]">
             Top-tier Blockchain VC Ecosystem to Penetrate the{' '}
             <span className="text-[#F03D26]">Vietnam</span> Market
           </p>

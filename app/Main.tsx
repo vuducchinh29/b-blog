@@ -1,9 +1,12 @@
 import { HeroSection } from '@/components/home/hero-section'
 import { OutObjective } from '@/components/home/our-objective'
+import { OutPortfolio } from '@/components/home/our-portfolio'
 import { OurPrinciples } from '@/components/home/our-principles'
+import { OutAdvisory } from '@/components/home/out-advisory'
+import { TeamPartner } from '@/components/home/team-partner'
 import { VisionSection } from '@/components/home/vision-section'
 
-const MAX_DISPLAY = 5
+// const MAX_DISPLAY = 5
 
 export default function Home({ posts }) {
   return (
@@ -14,9 +17,13 @@ export default function Home({ posts }) {
 
       <OutObjective />
 
+      <OutPortfolio />
+
       <OurPrinciples />
 
-      {/* <TeamPartner /> */}
+      <OutAdvisory />
+
+      <TeamPartner />
 
       {/* <OutInvester /> */}
 
