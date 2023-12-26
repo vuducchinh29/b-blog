@@ -79,11 +79,11 @@ const AdvisoryItem = ({ image, name, position, content }) => {
       <Image src={image} alt={name} className="mb-[15px] w-[119px] lg:w-[123px]" />
       <h4 className="text-[19px]">{name}</h4>
       <ul className="mb-[10px] mt-[20px]">
-        <li className="list-inside list-disc text-center text-[13px] font-bold italic lg:text-sm">
+        <li className="list-inside list-disc text-center text-[13px] font-bold italic text-secondary lg:text-sm">
           {position}
         </li>
       </ul>
-      <p className="text-center text-xs font-bold">{content}</p>
+      <p className="text-center text-xs font-medium leading-6">{content}</p>
     </div>
   )
 }

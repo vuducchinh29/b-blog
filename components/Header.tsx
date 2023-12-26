@@ -51,7 +51,6 @@ const Header = () => {
                     key={idx}
                     className="group relative text-2xl font-bold leading-[50px] text-primary"
                     href={_.href}
-                    scroll
                   >
                     <div>{_.name}</div>
                     <div
@@ -78,7 +77,7 @@ const Header = () => {
                 {navList.map((_) => (
                   <Disclosure.Button
                     key={_.name}
-                    as="a"
+                    as={Link}
                     href={_.href}
                     className={classNames(
                       _.current

@@ -9,7 +9,7 @@ import Image from 'next/image'
 
 export default function Footer() {
   return (
-    <footer className="footer-shadow bg-white font-poppins lg:pt-[38px]">
+    <footer className="footer-shadow bg-white font-poppins lg:pt-[38px]" id="join-us">
       <div className=" px-6 pt-[47px] lg:px-20">
         {/* <div className="pb-[43.5px] lg:pb-0">
           <Image src={Logo} alt="b.army logo" className="h-7 w-[118px] lg:h-[42px] lg:w-[171px]" />

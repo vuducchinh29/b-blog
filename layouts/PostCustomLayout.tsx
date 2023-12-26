@@ -22,7 +22,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
       <ScrollTopAndComment />
       <article className="px-6 lg:px-20">
         <div className="">
-          <header className="pb-4 pt-6 lg:pb-10">
+          <header className="pb-4 pt-0 lg:pb-10">
             <div className="space-y-1 text-center">
               <dl className="space-y-10"></dl>
               <div>

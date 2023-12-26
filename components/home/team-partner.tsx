@@ -31,16 +31,16 @@ const partnerList = [
     name: 'DC GROUP',
     content1: [
       {
-        c1: '200+',
-        c2: 'Multichannel communities.',
+        c1: '100B+',
+        c2: 'Views on TikTok',
       },
       {
-        c1: '100M+',
-        c2: 'Followers.',
+        c1: '500+',
+        c2: 'Exclusive management of the most popular Creators/ KOLs in Vietnam.',
       },
       {
-        c1: '10M+',
-        c2: 'Growth rate follower / year.',
+        c1: '60B+',
+        c2: 'The first MCN with 60B+ views on Tiktok (the largest TikTok network in SEA).',
       },
     ],
     content2: '',
@@ -50,16 +50,24 @@ const partnerList = [
     name: 'LAUNCHZONE | REDAO',
     content1: [
       {
-        c1: '200+',
-        c2: 'Multichannel communities.',
+        c1: '$1B ',
+        c2: 'Highest monthly volume.',
       },
       {
-        c1: '100M+',
-        c2: 'Followers.',
+        c1: '8th',
+        c2: 'Ranked 8th in MVB program.',
       },
       {
-        c1: '10M+',
-        c2: 'Growth rate follower / year.',
+        c1: '50+',
+        c2: 'Supported 50+ global projects with each project raising $1-2 million.',
+      },
+      {
+        c1: '260K+',
+        c2: 'Followers on Twitter.',
+      },
+      {
+        c1: '40K+',
+        c2: 'Members on Telegram community.',
       },
     ],
     content2: '',
@@ -69,16 +77,12 @@ const partnerList = [
     name: 'METAHUB',
     content1: [
       {
+        c1: '100+',
+        c2: 'Hosted events / year.',
+      },
+      {
         c1: '200+',
-        c2: 'Multichannel communities.',
-      },
-      {
-        c1: '100M+',
-        c2: 'Followers.',
-      },
-      {
-        c1: '10M+',
-        c2: 'Growth rate follower / year.',
+        c2: 'Network community - projects - exchange all over the world.',
       },
     ],
     content2: '',
@@ -90,6 +94,7 @@ const partnerList = [
     content2: (
       <p className="">
         The first blockchain organization that was legally recognized in Vietnam .
+        <br />
         <span className="text-primary">30K+</span> Members |{' '}
         <span className="text-primary">50+</span> Partners
       </p>
@@ -139,9 +144,9 @@ export const TeamPartner = () => {
               {_.content1.length ? (
                 <div className="space-y-1 font-poppins text-base font-semibold">
                   {_.content1.map((content, idx) => (
-                    <div className="flex" key={idx}>
+                    <div className="flex w-full" key={idx}>
                       <p className="w-[73px] text-primary">{content.c1}</p>
-                      <p className="text-white">{content.c2}</p>
+                      <p className="w-[calc(100%-73px)] text-white">{content.c2}</p>
                     </div>
                   ))}
                 </div>

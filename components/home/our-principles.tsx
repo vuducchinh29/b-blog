@@ -14,7 +14,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 const ourPrinciplesList = [
   {
-    title: 'THANH DAO',
+    title: 'Mr. THANH DAO',
     detail: [
       'Co-Founder & CTO of LaunchZone, Head of Investment & Application at VBA',
       'As the Former CTO of Nexty, or former CEO of Ezdefi e-wallet, Thanh Dao is a famous influencer and guest speaker/ judge of many blockchain events in Vietnam such as Vietnamese NFT & GameFi expo, Blockchain olympiad 2021, Binance Hackathon Vietnam, etc.',
@@ -53,7 +53,7 @@ export const OurPrinciples = () => {
             ></div>
           </div>
         </div>
-        <h2 className="home-title ml-6 lg:hidden">Our Principles</h2>
+        <h2 className="home-title ml-6 lg:hidden">Our Team</h2>
       </div>
 
       <div className="mt-4 bg-primary pt-10 lg:mt-0 lg:hidden">
@@ -112,7 +112,10 @@ export const OurPrinciples = () => {
               <h3 className="text-xl font-bold leading-[37.5px]">{_.title}</h3>
               <ul className="">
                 {_.detail.map((item, idx) => (
-                  <li className="list-inside list-disc text-sm font-bold leading-[26px]" key={idx}>
+                  <li
+                    className="list-inside list-disc text-justify text-sm font-bold leading-[26px]"
+                    key={idx}
+                  >
                     {item}
                   </li>
                 ))}
