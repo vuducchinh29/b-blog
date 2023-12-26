@@ -24,7 +24,7 @@ const Header = () => {
   const { width } = useWindowSize()
 
   return (
-    <header className="flex items-center justify-between py-10">
+    <header className="">
       <Disclosure as="nav" className="fixed left-0 top-0 z-50 w-full bg-secondary lg:bg-white">
         {({ open }) => (
           <>

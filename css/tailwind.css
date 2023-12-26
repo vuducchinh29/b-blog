@@ -94,3 +94,11 @@ input:-webkit-autofill:focus {
 .katex-display {
   overflow: auto hidden;
 }
+
+.blog-paragraph h2 {
+  @apply my-4 text-2xl;
+}
+
+.blog-paragraph p {
+  @apply text-base;
+}

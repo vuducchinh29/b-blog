@@ -3,6 +3,7 @@ import 'katex/dist/katex.css'
 
 import siteMetadata from '@/data/siteMetadata'
 import PostBanner from '@/layouts/PostBanner'
+import PostCustom from '@/layouts/PostCustomLayout'
 import PostLayout from '@/layouts/PostLayout'
 import PostSimple from '@/layouts/PostSimple'
 import blogAPI from 'apis/blog-api'
@@ -16,6 +17,7 @@ const layouts = {
   PostSimple,
   PostLayout,
   PostBanner,
+  PostCustom,
 }
 
 export async function generateMetadata({
@@ -87,7 +89,7 @@ async function getData(id: string) {
   return post
 }
 
-export default async function Page({ params }: { params: { id: string[] }[] }) {
+export default async function Page({ params }: { params: { id: string } }) {
   const post = await getData(params.id)
   if (!post) {
     return notFound()
@@ -98,15 +100,13 @@ export default async function Page({ params }: { params: { id: string[] }[] }) {
 
   const mainContent = post
 
-  const Layout = layouts.PostBanner
+  const Layout = layouts.PostCustom
 
   return (
     <>
-      <Layout content={mainContent} next={next} prev={prev}>
+      <Layout content={mainContent} authorDetails={mainContent.author} next={next} prev={prev}>
         {/* <MDXLayoutRenderer code={post.body.code} components={components} toc={post.toc} /> */}
-        <div className="" dangerouslySetInnerHTML={{ __html: '' }}>
-          {}
-        </div>
+        <div className="text-primary" dangerouslySetInnerHTML={{ __html: post.content }}></div>
       </Layout>
     </>
   )
