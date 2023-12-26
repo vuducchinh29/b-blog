@@ -3,20 +3,8 @@ import PageTitle from '@/components/PageTitle'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import SectionContainer from '@/components/SectionContainer'
 import Tag from '@/components/Tag'
-import siteMetadata from '@/data/siteMetadata'
 import { ReactNode } from 'react'
 import { BlogContent } from './ListLayoutWithTags'
-
-const editUrl = (path) => `${siteMetadata.siteRepo}/blob/main/data/${path}`
-const discussUrl = (path) =>
-  `https://mobile.twitter.com/search?q=${encodeURIComponent(`${siteMetadata.siteUrl}/${path}`)}`
-
-const postDateTemplate: Intl.DateTimeFormatOptions = {
-  weekday: 'long',
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-}
 
 interface LayoutProps {
   content: BlogContent
@@ -28,7 +16,6 @@ interface LayoutProps {
 
 export default function PostLayout({ content, authorDetails, next, prev, children }: LayoutProps) {
   const { title, cover, tags } = content
-  // const basePath = path.split('/')[0]
 
   return (
     <SectionContainer>
@@ -37,16 +24,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
         <div className="">
           <header className="pb-4 pt-6 lg:pb-10">
             <div className="space-y-1 text-center">
-              <dl className="space-y-10">
-                {/* <div>
-                  <dt className="sr-only">Published on</dt>
-                  <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                    <time dateTime={date}>
-                      {new Date(date).toLocaleDateString(siteMetadata.locale, postDateTemplate)}
-                    </time>
-                  </dd>
-                </div> */}
-              </dl>
+              <dl className="space-y-10"></dl>
               <div>
                 <PageTitle>{title}</PageTitle>
               </div>

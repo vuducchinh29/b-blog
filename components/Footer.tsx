@@ -15,8 +15,8 @@ export default function Footer() {
           <Image src={Logo} alt="b.army logo" className="h-7 w-[118px] lg:h-[42px] lg:w-[171px]" />
         </div> */}
 
-        <div className="flex flex-col lg:flex-row lg:justify-between">
-          <div className="flex items-center">
+        <div className="flex w-full flex-col lg:flex-row lg:justify-between">
+          <div className="mb-[26px] flex items-center lg:mb-0">
             <Image
               src={Logo}
               alt="b.army logo"
@@ -38,8 +38,8 @@ export default function Footer() {
             </div> */}
 
           <div
-            className="space-y-[41px] border-t border-t-[#E6E8EC] py-8 text-[#23262F] 
-              lg:max-w-[441px] lg:space-y-5 lg:border-none lg:py-0 lg:pb-[30px] lg:text-primary"
+            className="space-y-[41px] border-t border-t-[#E6E8EC] py-8
+              text-primary lg:max-w-[441px] lg:space-y-5 lg:border-none lg:py-0 lg:pb-[30px]"
           >
             <h3 className="text-xs font-bold uppercase lg:text-[17px]">Contact us</h3>
             <div className="space-y-2">
@@ -53,6 +53,8 @@ export default function Footer() {
               </p>
             </div>
           </div>
+
+          <div className="hidden opacity-0 lg:block lg:w-[100px] lg:max-w-full"></div>
 
           <div className="hidden w-[184px] lg:block lg:py-0 lg:pb-[53px]">
             <div className="flex h-full items-end justify-between">
@@ -81,7 +83,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="hidden justify-center border-t border-t-primary px-6 py-[29px] text-[13px] font-bold text-primary lg:flex lg:px-20">
+      <div className="hidden justify-center border-t border-t-primary px-6 py-3 text-[13px] font-medium text-primary lg:flex lg:px-20">
         Copyright ® 2023 by B.Army
       </div>
     </footer>

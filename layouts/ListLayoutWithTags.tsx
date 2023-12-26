@@ -5,11 +5,10 @@ import Link from '@/components/Link'
 import Tag from '@/components/Tag'
 import ArrowIcon from 'app/assets/images/icons/arrow1.svg'
 import tagData from 'app/tag-data.json'
+import { base_url } from 'configs/env'
 import { slug } from 'github-slugger'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-
-const base_url = process.env.NEXT_PUBLIC_API_URI
 
 interface PaginationProps {
   totalPages: number
@@ -89,17 +88,17 @@ export default function ListLayoutWithTags({
 
   return (
     <>
-      <div className="px-6 lg:px-20">
-        <div className="pb-6 pt-6">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:hidden sm:text-4xl sm:leading-10 md:text-6xl md:leading-14 dark:text-gray-100">
+      <div className="px-6 pb-10 lg:px-20">
+        <div className="pt-6">
+          <h1 className="block py-[13px] font-rajdhani text-xl font-bold tracking-tight text-primary lg:hidden">
             {title}
           </h1>
         </div>
         <div className="flex sm:space-x-6">
-          <div className="hidden h-full max-h-screen min-w-[358px] max-w-[358px] flex-wrap overflow-auto rounded bg-primary pt-5 shadow-md shadow-gray-800/40 sm:flex">
-            <div className="px-6 py-4">
+          <div className="hidden h-full max-h-screen min-w-[358px] max-w-[358px] flex-wrap overflow-auto rounded bg-primary shadow-md shadow-gray-800/40 sm:flex">
+            <div className="px-6 pb-[31px] pt-4">
               {pathname.startsWith('/blog') ? (
-                <h3 className="text-2xl font-bold uppercase text-secondary">All Posts</h3>
+                <h3 className="mt-2 text-2xl font-bold uppercase text-secondary">All Posts</h3>
               ) : (
                 <Link href={`/blog`} className="text-2xl font-bold uppercase text-secondary ">
                   All Posts

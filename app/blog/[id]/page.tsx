@@ -7,10 +7,9 @@ import PostCustom from '@/layouts/PostCustomLayout'
 import PostLayout from '@/layouts/PostLayout'
 import PostSimple from '@/layouts/PostSimple'
 import blogAPI from 'apis/blog-api'
+import { base_url } from 'configs/env'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-
-export const base_url = process.env.NEXT_PUBLIC_API_URI
 
 const defaultLayout = 'PostLayout'
 const layouts = {
