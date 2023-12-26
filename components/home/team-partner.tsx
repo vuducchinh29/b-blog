@@ -157,7 +157,7 @@ export const TeamPartner = () => {
         </div>
       </div>
 
-      <p className="mt-[29px] max-w-[43px] text-center font-poppins text-base font-bold leading-[50.04px] text-primary lg:mt-[53px] lg:max-w-none lg:text-2xl">
+      <p className="mt-[29px] px-6 text-center font-poppins text-base font-bold text-primary lg:mt-[53px] lg:px-20 lg:text-2xl">
         Let us know if you'd like an introduction to any of our valuable partners!
       </p>
     </section>
