@@ -47,9 +47,7 @@ export const OutObjective = () => {
   return (
     <section className="mt-4 lg:mt-[85px]">
       <div className="px-6 lg:px-20">
-        <h2 className="home-title">
-          {width >= 1024 ? 'Our Approach to address Funding challenges' : 'Our Objectives'}
-        </h2>
+        <h2 className="home-title">{'Our Objectives'}</h2>
       </div>
 
       <div className="px-7 lg:px-20">

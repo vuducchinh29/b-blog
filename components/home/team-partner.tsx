@@ -1,3 +1,8 @@
+'use client'
+
+import 'swiper/css'
+import 'swiper/css/pagination'
+
 import Partner01Img from 'app/assets/images/partner-01.svg'
 import Partner02Img from 'app/assets/images/partner-02.svg'
 import Partner03Img from 'app/assets/images/partner-03.svg'
@@ -5,6 +10,10 @@ import Partner04Img from 'app/assets/images/partner-04.svg'
 import Partner05Img from 'app/assets/images/partner-05.svg'
 import Partner06Img from 'app/assets/images/partner-06.svg'
 import Image from 'next/image'
+import { Autoplay, Pagination } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { useState } from 'react'
+import useWindowSize from 'hooks/use-window-size'
 
 const partnerList = [
   {
@@ -113,6 +122,11 @@ const partnerList = [
 ]
 
 export const TeamPartner = () => {
+  const [swiper, setSwiper] = useState<unknown>(null)
+  const [slideIndex, setSlideIndex] = useState(0)
+
+  const { width } = useWindowSize()
+
   return (
     <section className="relative pb-6 pt-6 lg:pb-16 lg:pt-16">
       <div className="absolute -top-[111px] left-0" id="team-partner"></div>
@@ -132,34 +146,74 @@ export const TeamPartner = () => {
         <p className="py-4 text-sm leading-[26px] text-primary lg:pb-7 lg:pt-6 lg:text-xl lg:font-bold">
           We collaborate closely with best-in-class partners across the blockchain ecosystem
         </p>
-
-        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-7">
-          {partnerList.map((_, idx) => (
-            <div
-              key={idx}
-              className="col-span-1 flex h-[452px] flex-col items-center bg-secondary px-6 pb-[38px] pt-[52px]"
-            >
-              <Image src={_.avatar} alt="avatar" className="mb-[27px] h-[125px]" />
-              <p className="mb-[8px] text-base font-bold leading-[32px] text-primary">{_.name}</p>
-              {_.content1.length ? (
-                <div className="space-y-1 font-poppins text-base font-semibold">
-                  {_.content1.map((content, idx) => (
-                    <div className="flex w-full" key={idx}>
-                      <p className="w-[73px] text-primary">{content.c1}</p>
-                      <p className="w-[calc(100%-73px)] text-white">{content.c2}</p>
+        {width < 1024 ? (
+          <Swiper
+            className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-7"
+            modules={[Autoplay, Pagination]}
+            effect="cards"
+            spaceBetween={16}
+            slidesPerView={1}
+            autoplay={true}
+            pagination
+            onSwiper={setSwiper}
+            onSlideChange={({ activeIndex }) => setSlideIndex(activeIndex)}
+          >
+            {partnerList.map((_, idx, arr) => (
+              <SwiperSlide className="pb-[50px]" key={idx}>
+                <div className="col-span-1 flex h-[452px] flex-col items-center bg-secondary px-6 pb-[38px] pt-[52px]">
+                  <Image src={_.avatar} alt="avatar" className="mb-[27px] h-[125px]" />
+                  <p className="mb-[8px] text-base font-bold leading-[32px] text-primary">
+                    {_.name}
+                  </p>
+                  {_.content1.length ? (
+                    <div className="space-y-1 font-poppins text-base font-semibold">
+                      {_.content1.map((content, idx) => (
+                        <div className="flex w-full" key={idx}>
+                          <p className="w-[73px] text-primary">{content.c1}</p>
+                          <p className="w-[calc(100%-73px)] text-white">{content.c2}</p>
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
-              ) : null}
+                  ) : null}
 
-              {_.content2 ? (
-                <div className="text-center font-poppins text-base font-semibold text-white">
-                  {_.content2}
+                  {_.content2 ? (
+                    <div className="text-center font-poppins text-base font-semibold text-white">
+                      {_.content2}
+                    </div>
+                  ) : null}
                 </div>
-              ) : null}
-            </div>
-          ))}
-        </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        ) : (
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-7">
+            {partnerList.map((_, idx) => (
+              <div
+                key={idx}
+                className="col-span-1 flex h-[452px] flex-col items-center bg-secondary px-6 pb-[38px] pt-[52px]"
+              >
+                <Image src={_.avatar} alt="avatar" className="mb-[27px] h-[125px]" />
+                <p className="mb-[8px] text-base font-bold leading-[32px] text-primary">{_.name}</p>
+                {_.content1.length ? (
+                  <div className="space-y-1 font-poppins text-base font-semibold">
+                    {_.content1.map((content, idx) => (
+                      <div className="flex w-full" key={idx}>
+                        <p className="w-[73px] text-primary">{content.c1}</p>
+                        <p className="w-[calc(100%-73px)] text-white">{content.c2}</p>
+                      </div>
+                    ))}
+                  </div>
+                ) : null}
+
+                {_.content2 ? (
+                  <div className="text-center font-poppins text-base font-semibold text-white">
+                    {_.content2}
+                  </div>
+                ) : null}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       <p className="mt-[29px] px-6 text-center font-poppins text-base font-bold text-primary lg:mt-[53px] lg:px-20 lg:text-2xl">
