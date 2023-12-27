@@ -5,5 +5,5 @@ interface Props {
 }
 
 export default function SectionContainer({ children }: Props) {
-  return <section className="pt-[60px] lg:pt-[90px]">{children}</section>
+  return <section className="pt-[60px]">{children}</section>
 }
