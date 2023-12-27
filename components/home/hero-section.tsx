@@ -52,7 +52,7 @@ const hots = [
 export const HeroSection = () => {
   return (
     <section className="px-6 lg:px-20">
-      <div className="flex items-center gap-[97px] lg:justify-between">
+      <div className="flex items-center lg:justify-between lg:gap-[40px] 2xl:gap-[97px]">
         <div className="w-full lg:w-auto">
           {/* <h2 className="font-poppins text-xl font-bold leading-[41px] text-secondary lg:text-[32px] lg:leading-[66px]">
             About us

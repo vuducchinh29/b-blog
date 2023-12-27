@@ -1,9 +1,11 @@
 'use client'
 
-import FBMobileIcon from 'app/assets/images/fb-mobile-icon.svg'
-import InsMobileIcon from 'app/assets/images/instagram-mobile-icon.svg'
+import AMobileIcon from 'app/assets/images/a-mobile-icon.svg'
+import DiscordMobileIcon from 'app/assets/images/discord-mobile-icon.svg'
+import GithubMobileIcon from 'app/assets/images/github-mobile-icon.svg'
 import Logo from 'app/assets/images/logo.png'
-import XMobileIcon from 'app/assets/images/tw-mobile-icon.svg'
+import TeleMobileIcon from 'app/assets/images/tele-mobile-icon.svg'
+import XMobileIcon from 'app/assets/images/x-mobile-icon.svg'
 
 import Image from 'next/image'
 
@@ -57,15 +59,21 @@ export default function Footer() {
           <div className="hidden opacity-0 lg:block lg:w-[100px] lg:max-w-full"></div>
 
           <div className="hidden w-[184px] lg:block lg:py-0 lg:pb-[53px]">
-            <div className="flex h-full items-end justify-between">
+            <div className="flex h-full items-end justify-between gap-[19px]">
               <div className="social-shadow flex aspect-square w-[34px] items-center justify-center rounded-full bg-white">
-                <Image src={FBMobileIcon} alt="facebook mobile icon" className="w-3" />
+                <Image src={GithubMobileIcon} alt="github mobile icon" className="w-3" />
+              </div>
+              <div className="social-shadow flex aspect-square w-[34px] items-center justify-center rounded-full bg-white">
+                <Image src={TeleMobileIcon} alt="tele mobile icon" className="w-3" />
+              </div>
+              <div className="social-shadow flex aspect-square w-[34px] items-center justify-center rounded-full bg-white">
+                <Image src={AMobileIcon} alt="a mobile icon" className="w-3" />
+              </div>
+              <div className="social-shadow flex aspect-square w-[34px] items-center justify-center rounded-full bg-white">
+                <Image src={DiscordMobileIcon} alt="discord mobile icon" className="w-3" />
               </div>
               <div className="social-shadow flex aspect-square w-[34px] items-center justify-center rounded-full bg-white">
                 <Image src={XMobileIcon} alt="x mobile icon" className="w-3" />
-              </div>
-              <div className="social-shadow flex aspect-square w-[34px] items-center justify-center rounded-full bg-white">
-                <Image src={InsMobileIcon} alt="instagram mobile icon" className="w-3" />
               </div>
             </div>
           </div>
@@ -76,9 +84,11 @@ export default function Footer() {
             Copyright © 2023 B.Army. All rights reserved
           </p>
           <div className="flex gap-6">
-            <Image src={FBMobileIcon} alt="facebook mobile icon" className="w-5" />
+            <Image src={GithubMobileIcon} alt="facebook mobile icon" className="w-5" />
             <Image src={XMobileIcon} alt="x mobile icon" className="w-5" />
-            <Image src={InsMobileIcon} alt="instagram mobile icon" className="w-5" />
+            <Image src={AMobileIcon} alt="a mobile icon" className="w-5" />
+            <Image src={DiscordMobileIcon} alt="discord mobile icon" className="w-5" />
+            <Image src={XMobileIcon} alt="x mobile icon" className="w-5" />
           </div>
         </div>
       </div>
