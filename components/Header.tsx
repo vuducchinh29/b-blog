@@ -16,7 +16,6 @@ const Header = () => {
     { name: 'About', href: '/#about', current: true },
     { name: 'Team & Partner', href: '/#team-partner', current: false },
     { name: 'Join Us', href: '/#join-us', current: false },
-    { name: 'Blog', href: '/blog', current: false },
   ])
 
   const [activeName, setActiveName] = useState('')
