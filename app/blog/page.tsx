@@ -1,6 +1,7 @@
 import ListLayout from '@/layouts/ListLayoutWithTags'
 import blogAPI from 'apis/blog-api'
 import { genPageMetadata } from 'app/seo'
+import { base_url } from 'configs/env'
 
 const POSTS_PER_PAGE = 100
 
@@ -15,9 +16,10 @@ export const generateStaticParams = async () => {
 }
 
 async function getData() {
-  const posts = (await blogAPI.getBlogs(POSTS_PER_PAGE)).data
-
-  return posts
+  const res = await fetch(`${base_url}/items/Blog?limit=${100}`, {
+    next: { revalidate: 60 },
+  })
+  return (await res.json()).data
 }
 
 export default async function BlogPage() {

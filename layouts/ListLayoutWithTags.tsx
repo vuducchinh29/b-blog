@@ -88,7 +88,7 @@ export default function ListLayoutWithTags({
 
   return (
     <>
-      <div className="px-6 pb-10 lg:px-20">
+      <div className="px-6 pb-10 lg:px-20 lg:pt-10">
         <div className="pt-6">
           <h1 className="block py-[13px] font-rajdhani text-xl font-bold tracking-tight text-primary lg:hidden">
             {title}

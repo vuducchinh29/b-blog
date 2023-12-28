@@ -10,7 +10,7 @@ const Tag = ({ text }: Props) => {
       href={`/tags/${slug(text)}`}
       className="mb-3 mr-3 text-xs font-medium uppercase text-primary hover:underline"
     >
-      <div className="bg-secondary px-2.5 py-[3px]">{text.split(' ').join('-')}</div>
+      <div className="bg-secondary px-2.5 py-[3px]">{`${text}`.split(' ').join('-')}</div>
     </Link>
   )
 }
