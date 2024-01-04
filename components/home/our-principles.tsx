@@ -92,14 +92,14 @@ export const OurPrinciples = () => {
                       {item}
                     </li>
                   ))}
-                  <li className="list-inside list-none text-sm text-secondary mt-2">
-                  {_.profile}:{' '}
-                  <span>
-                    <a href={_.link} className="" target={'_blank'}>
-                      {_.link}
-                    </a>
-                  </span>
-                </li>
+                  <li className="mt-2 list-inside list-none text-sm text-secondary">
+                    {_.profile}:{' '}
+                    <span>
+                      <a href={_.link} className="" target={'_blank'}>
+                        {_.link}
+                      </a>
+                    </span>
+                  </li>
                 </ul>
               </div>
             </SwiperSlide>
@@ -133,7 +133,7 @@ export const OurPrinciples = () => {
                     {item}
                   </li>
                 ))}
-                <li className="list-inside list-none text-justify text-sm font-bold leading-[26px] mt-2">
+                <li className="mt-2 list-inside list-none text-justify text-sm font-bold leading-[26px]">
                   {_.profile}:{' '}
                   <span>
                     <a href={_.link} className="" target={'_blank'}>
