@@ -40,12 +40,12 @@ const hots = [
   {
     name: 'Go Penetrating',
     icon: GoPenetratingIcon,
-    link: 'https://forms.gle/DjgHpojJSAGaR5D6A ',
+    link: 'https://forms.gle/XxbRieNsuh1ktd5P7',
   },
   {
     name: 'Join Our Accelerator Program',
     icon: AcceleratorIcon,
-    link: 'https://forms.gle/5eJDYjUiseQ1xDDj7 ',
+    link: 'https://forms.gle/XxbRieNsuh1ktd5P7',
   },
 ]
 

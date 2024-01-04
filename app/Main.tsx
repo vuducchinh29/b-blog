@@ -17,13 +17,13 @@ export default function Home({ posts }) {
 
       <OutObjective />
 
+      <TeamPartner />
+
       <OutPortfolio />
 
       <OurPrinciples />
 
-      <OutAdvisory />
-
-      <TeamPartner />
+      {/* <OutAdvisory /> */}
 
       {/* <OutInvester /> */}
 

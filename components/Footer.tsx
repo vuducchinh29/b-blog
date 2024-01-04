@@ -46,12 +46,29 @@ export default function Footer() {
             <h3 className="text-xs font-bold uppercase lg:text-[17px]">Contact us</h3>
             <div className="space-y-2">
               <p className="text-sm font-medium leading-6">
-                For inquiries and discussions regarding investment or project promotion
-                opportunities, please feel free to fill in necessary information.
+                Email:{' '}
+                <span>
+                  <a href="mailto:Business@b.army" target={'_blank'}>
+                    Business@b.army
+                  </a>
+                </span>
                 <br />
+                Debank:{' '}
+                <span>
+                  <a
+                    href="https://debank.com/profile/0x82e459f86d2993a29c86eba19b86cd5712a223eb/stream"
+                    target={'_blank'}
+                  >
+                    https://debank.com/profile/0x82e459f86d2993a29c86eba19b86cd5712a223eb/stream
+                  </a>
+                </span>
                 <br />
-                We are actively seeking to support and invest in the most promising blockchain
-                startups worldwide.
+                Binance Feed:{' '}
+                <span>
+                  <a href="https://www.binance.com/vi/feed/profile/B_ARMY" target={'_blank'}>
+                    https://www.binance.com/vi/feed/profile/B_ARMY
+                  </a>
+                </span>
               </p>
             </div>
           </div>

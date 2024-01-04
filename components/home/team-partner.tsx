@@ -9,6 +9,8 @@ import Partner03Img from 'app/assets/images/partner-03.svg'
 import Partner04Img from 'app/assets/images/partner-04.svg'
 import Partner05Img from 'app/assets/images/partner-05.svg'
 import Partner06Img from 'app/assets/images/partner-06.svg'
+import W3ASIA from 'app/assets/images/W3ASIA.svg'
+import HKBA from 'app/assets/images/HKBA.svg'
 import Image from 'next/image'
 import { Autoplay, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -16,6 +18,77 @@ import { useState } from 'react'
 import useWindowSize from 'hooks/use-window-size'
 
 const partnerList = [
+  {
+    avatar: Partner05Img,
+    name: 'VIETNAM BLOCKCHAIN',
+    content1: [],
+    content2: (
+      <p className="">The first blockchain organization that was legally recognized in Vietnam.</p>
+    ),
+  },
+  {
+    avatar: W3ASIA,
+    name: 'W3 ASIA',
+    content1: [
+      {
+        c1: '40+',
+        c2: 'Blockchain Developers',
+      },
+      {
+        c1: '25+',
+        c2: 'Partners from all fields',
+      },
+    ],
+    content2: '',
+  },
+  {
+    avatar: HKBA,
+    name: 'Hong Kong Blockchain Association 香港區塊鏈協會',
+    content1: [],
+    content2: (
+      <p className="">
+        Leading industry association in Hong Kong and the Greater Bay Area for Blockchain and Web3
+        technology
+      </p>
+    ),
+  },
+  {
+    avatar: Partner03Img,
+    name: 'REDAO (Aka LauchZone)',
+    content1: [
+      {
+        c1: '$1B ',
+        c2: 'Highest monthly volume.',
+      },
+      {
+        c1: '8th',
+        c2: 'Ranked 8th in MVB program.',
+      },
+      {
+        c1: '50+',
+        c2: 'Supported 50+ global projects with each project raising $1-2 million.',
+      },
+      {
+        c1: '260K+',
+        c2: 'Followers on Twitter.',
+      },
+      {
+        c1: '40K+',
+        c2: 'Members on Telegram community.',
+      },
+    ],
+    content2: '',
+  },
+  {
+    avatar: Partner06Img,
+    name: 'KOLSNETWORK',
+    content1: [],
+    content2: (
+      <p className="">
+        <span className="text-primary">100+</span> global and Vietnamese KOLs on Twitter.
+      </p>
+    ),
+  },
   {
     avatar: Partner01Img,
     name: 'THEANH 28',
@@ -54,71 +127,6 @@ const partnerList = [
     ],
     content2: '',
   },
-  {
-    avatar: Partner03Img,
-    name: 'LAUNCHZONE | REDAO',
-    content1: [
-      {
-        c1: '$1B ',
-        c2: 'Highest monthly volume.',
-      },
-      {
-        c1: '8th',
-        c2: 'Ranked 8th in MVB program.',
-      },
-      {
-        c1: '50+',
-        c2: 'Supported 50+ global projects with each project raising $1-2 million.',
-      },
-      {
-        c1: '260K+',
-        c2: 'Followers on Twitter.',
-      },
-      {
-        c1: '40K+',
-        c2: 'Members on Telegram community.',
-      },
-    ],
-    content2: '',
-  },
-  {
-    avatar: Partner04Img,
-    name: 'METAHUB',
-    content1: [
-      {
-        c1: '100+',
-        c2: 'Hosted events / year.',
-      },
-      {
-        c1: '200+',
-        c2: 'Network community - projects - exchange all over the world.',
-      },
-    ],
-    content2: '',
-  },
-  {
-    avatar: Partner05Img,
-    name: 'VIETNAM BLOCKCHAIN',
-    content1: [],
-    content2: (
-      <p className="">
-        The first blockchain organization that was legally recognized in Vietnam .
-        <br />
-        <span className="text-primary">30K+</span> Members |{' '}
-        <span className="text-primary">50+</span> Partners
-      </p>
-    ),
-  },
-  {
-    avatar: Partner06Img,
-    name: 'KOLSNETWORK',
-    content1: [],
-    content2: (
-      <p className="">
-        <span className="text-primary">100+</span> global and Vietnamese KOLs on Twitter.
-      </p>
-    ),
-  },
 ]
 
 export const TeamPartner = () => {
@@ -141,7 +149,7 @@ export const TeamPartner = () => {
         lg:block"
       ></div>
       <div className="relative z-[2] px-6 font-poppins lg:px-20">
-        <h2 className="home-title !text-primary">Team & Partner</h2>
+        <h2 className="home-title !text-primary">Network Partners</h2>
 
         <p className="py-4 text-sm leading-[26px] text-primary lg:pb-7 lg:pt-6 lg:text-xl lg:font-bold">
           We collaborate closely with best-in-class partners across the blockchain ecosystem
@@ -165,6 +173,11 @@ export const TeamPartner = () => {
                   <p className="mb-[8px] text-base font-bold leading-[32px] text-primary">
                     {_.name}
                   </p>
+                  {_.name === 'W3 ASIA' && (
+                    <div className="mb-[8px] text-center font-poppins text-base font-semibold text-white">
+                      Vietnam's top tech firm for web/mobile app development.
+                    </div>
+                  )}
                   {_.content1.length ? (
                     <div className="space-y-1 font-poppins text-base font-semibold">
                       {_.content1.map((content, idx) => (
@@ -194,6 +207,11 @@ export const TeamPartner = () => {
               >
                 <Image src={_.avatar} alt="avatar" className="mb-[27px] h-[125px]" />
                 <p className="mb-[8px] text-base font-bold leading-[32px] text-primary">{_.name}</p>
+                {_.name === 'W3 ASIA' && (
+                  <div className="mb-[8px] text-center font-poppins text-base font-semibold text-white">
+                    Vietnam's top tech firm for web/mobile app development.
+                  </div>
+                )}
                 {_.content1.length ? (
                   <div className="space-y-1 font-poppins text-base font-semibold">
                     {_.content1.map((content, idx) => (

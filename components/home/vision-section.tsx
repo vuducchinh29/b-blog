@@ -20,14 +20,14 @@ export const VisionSection = () => {
           className="mt-4 text-center font-poppins text-sm font-medium leading-[29.19px] text-primary
           lg:mt-6 lg:text-left lg:text-xl lg:leading-[41px]"
         >
-          Leveraging our extensive resources in web2 users, social networks, and communities in
-          Vietnam - where user acquisition costs are extremely affordable - B.ARMY is uniquely
-          positioned to fully support projects from their earliest stages.
+          Using our vast web2 user resources and thriving social networks within Vietnam, where user
+          acquisition costs are notably low, B.ARMY excels in providing comprehensive support to
+          projects right from their inception.
           <br /> <br />
-          With our deep local market expertise and developer resources, combined with Vietnam's low
-          cost user base.
-          <br /> <br /> We provide a full suite of assistance, from pre-funding support to
-          onboarding early adopters and helping them scale their user base.
+          With our extensive local market knowledge, developer resources, and the advantage of
+          Vietnam's cost-effective user base, we provide end-to-end support, spanning from
+          pre-funding aid to nurturing early adopters and enabling the scalable expansion of their
+          user base
         </p>
       </div>
     </section>

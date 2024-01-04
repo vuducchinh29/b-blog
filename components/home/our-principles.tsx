@@ -16,11 +16,15 @@ const ourPrinciplesList = [
   {
     title: 'Mr. THANH DAO',
     detail: [
-      'Co-Founder & CTO of LaunchZone, Head of Investment & Application at VBA',
-      'As the Former CTO of Nexty, or former CEO of Ezdefi e-wallet, Thanh Dao is a famous influencer and guest speaker/ judge of many blockchain events in Vietnam such as Vietnamese NFT & GameFi expo, Blockchain olympiad 2021, Binance Hackathon Vietnam, etc.',
+      'Co-Founder & CTO of LaunchZone',
+      'Head of Investment & Application at VBA',
+      'Former CTO of Nexty, former CEO of Ezdeﬁ e-wallet',
+      'Inﬂuencer and guest speaker/ judge of many blockchain events/hackathon in Vietnam',
     ],
     image: OurTeamImg01,
     numImg: PrinciplesNumberImg01,
+    profile: 'LinkedIn',
+    link: 'https://www.linkedin.com/in/techcomthanh/',
   },
   {
     title: 'Mr. LOGAN',
@@ -28,10 +32,12 @@ const ourPrinciplesList = [
       'Co-Founder & CMO of LaunchZone',
       'Founder of Mayor Capital',
       'Founder of Crypto Sale Mastery',
-      'Logan is known as a famous influencer, as well as a community building expert in Vietnam’s financial industry',
+      'Influencer and community building expert in Vietnam’s financial industry',
     ],
     image: OurTeamImg02,
     numImg: PrinciplesNumberImg02,
+    profile: 'Twitter',
+    link: 'https://twitter.com/chutraiga',
   },
 ]
 
@@ -45,15 +51,15 @@ export const OurPrinciples = () => {
         <div className="ml-20 hidden items-center text-[32px] font-bold leading-[67px] lg:flex">
           <div className="relative z-[2] text-primary">
             <p className="relative z-[2] font-bold">
-              Our <span className="font-bold text-white">Team</span>
+              <span className="font-bold text-white">ADVISORY & MENTOR BOARDS</span>
             </p>
             <div
-              className="absolute -right-8 -top-[40%] z-[1] hidden aspect-square 
+              className="absolute -left-[10rem] -top-[40%] z-[1] hidden aspect-square 
               w-[443px] -translate-y-1/2 rounded-full bg-secondary lg:block"
             ></div>
           </div>
         </div>
-        <h2 className="home-title ml-6 lg:hidden">Our Team</h2>
+        <h2 className="home-title ml-6 lg:hidden">ADVISORY & MENTOR BOARDS</h2>
       </div>
 
       <div className="mt-4 bg-primary pt-10 lg:mt-0 lg:hidden">
@@ -86,6 +92,7 @@ export const OurPrinciples = () => {
                       {item}
                     </li>
                   ))}
+                  <li className="list-inside list-disc text-sm text-secondary">Profile:</li>
                 </ul>
               </div>
             </SwiperSlide>
@@ -119,6 +126,14 @@ export const OurPrinciples = () => {
                     {item}
                   </li>
                 ))}
+                <li className="list-inside list-none text-justify text-sm font-bold leading-[26px]">
+                  {_.profile}:{' '}
+                  <span>
+                    <a href={_.link} className="" target={'_blank'}>
+                      {_.link}
+                    </a>
+                  </span>
+                </li>
               </ul>
             </div>
           </div>

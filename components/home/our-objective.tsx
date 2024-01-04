@@ -17,23 +17,26 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 const outObjectiveList = [
   {
     title: '',
-    detail: 'Aiding Web3 startups in expanding their communities and connecting with existing ones',
+    detail:
+      'Providing full pre-launch support to help projects prepare and plan their strategy in Vietnam',
     image: PImage1,
   },
   {
     title: '',
     detail:
-      'High Skill & Experience on community building from Advisory Boards who are Vietnamese KOLs',
+      'Onboarding early adopters in Vietnam to test, refine and gather initial feedback on products/services',
     image: PImage2,
   },
   {
     title: '',
-    detail: 'Enhancing project visibility and virality by Strong Media & Social Network',
+    detail:
+      'Assisting with user acquisition in Vietnam to help projects scale their Vietnamese user base',
     image: PImage3,
   },
   {
     title: '',
-    detail: 'Obtaining support from Vietnam Blockchain Association (VBA)',
+    detail:
+      'Leveraging our experience to support continued international user retention and expansion as projects grow globally',
     image: PImage4,
   },
 ]
