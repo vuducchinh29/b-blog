@@ -46,6 +46,18 @@ export default function Footer() {
             <h3 className="text-xs font-bold uppercase lg:text-[17px]">Contact us</h3>
             <div className="space-y-2">
               <p className="text-sm font-medium leading-6">
+                For inquiries and discussions regarding investment or project promotion
+                opportunities, please feel free to fill in necessary information.
+                <br />
+                <br />
+                We are actively seeking to support and invest in the most promising blockchain
+                startups worldwide.
+              </p>
+            </div>
+          </div>
+
+          {/* <div className="space-y-2">
+              <p className="text-sm font-medium leading-6">
                 Email:{' '}
                 <span>
                   <a href="mailto:Business@b.army" target={'_blank'}>
@@ -71,7 +83,7 @@ export default function Footer() {
                 </span>
               </p>
             </div>
-          </div>
+          </div> */}
 
           <div className="hidden opacity-0 lg:block lg:w-[100px] lg:max-w-full"></div>
 
