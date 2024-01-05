@@ -46,7 +46,7 @@ export const OurPrinciples = () => {
   const [slideIndex, setSlideIndex] = useState(0)
 
   return (
-    <section className="mt-[38px] bg-white p-0 lg:mt-[16px] lg:bg-primary lg:pb-[77px] lg:pt-[25px]">
+    <section className="bg-white p-0 lg:bg-primary lg:pb-[77px] lg:pt-[25px]">
       <div className="">
         <div className="ml-20 hidden items-center text-[32px] font-bold leading-[67px] lg:flex">
           <div className="relative z-[2] text-primary">
