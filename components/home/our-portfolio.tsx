@@ -24,6 +24,9 @@ import ApolloXImage from 'app/assets/images/LOGO INVEST/19. ApolloX.png'
 import Unisat_Image from 'app/assets/images/LOGO INVEST/20. Unisat_.jpg'
 import BNB48ClubImage from 'app/assets/images/LOGO INVEST/21. BNB48 Club.png'
 import DGGNetworkImage from 'app/assets/images/LOGO INVEST/22. DGG Network_.jpg'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, Pagination } from 'swiper/modules'
+import { Fragment, useState } from 'react'
 
 const itemList = [
   { name: 'Waggle Network', image: WaggleNetworkImage },
@@ -51,10 +54,13 @@ const itemList = [
 ]
 
 export const OutPortfolio = () => {
+  const [swiper, setSwiper] = useState<unknown>(null)
+  const [slideIndex, setSlideIndex] = useState(0)
+
   return (
     <section className="mt-7 lg:mt-[85px]">
-      <div className="px-6 lg:px-20">
-        <h2 className="home-title">Investment Portfolio</h2>
+      <div className="mb-[14px] px-6 lg:mb-0 lg:px-20">
+        <h2 className="home-title !lg:leading-0 !leading-[49px]">Investment Portfolio</h2>
       </div>
       <div className="mt-5 hidden space-y-[54px] bg-primary px-6 lg:block lg:px-20 lg:pb-[89px] lg:pt-[97px]">
         {/* <Image src={DGGLogo} alt="DGG Network Logo" className="blog w-[172px] lg:w-[264px]" />
@@ -66,55 +72,79 @@ export const OutPortfolio = () => {
 
         <div className="flex justify-center gap-[95px]">
           {itemList.map((_, idx) => (
-            <>
+            <Fragment key={idx}>
               {idx >= 0 && idx < 7 && (
                 <div className="flex flex-col items-center gap-3">
                   <Image src={_.image} alt={_.name} className="h-[90px] w-[90px]" />
                   <p className="text-xs font-bold text-secondary">{_.name}</p>
                 </div>
               )}
-            </>
+            </Fragment>
           ))}
         </div>
 
         <div className="flex justify-center gap-[95px]">
           {itemList.map((_, idx) => (
-            <>
+            <Fragment key={idx}>
               {idx >= 7 && idx < 13 && (
                 <div className="flex flex-col items-center gap-3">
                   <Image src={_.image} alt={_.name} className="h-[90px] w-[90px]" />
                   <p className="text-xs font-bold text-secondary">{_.name}</p>
                 </div>
               )}
-            </>
+            </Fragment>
           ))}
         </div>
 
         <div className="flex justify-center gap-[95px]">
           {itemList.map((_, idx) => (
-            <>
+            <Fragment key={idx}>
               {idx >= 13 && idx < 18 && (
                 <div className="flex flex-col items-center gap-3">
                   <Image src={_.image} alt={_.name} className="h-[90px] w-[90px]" />
                   <p className="text-xs font-bold text-secondary">{_.name}</p>
                 </div>
               )}
-            </>
+            </Fragment>
           ))}
         </div>
 
         <div className="flex justify-center gap-[95px]">
           {itemList.map((_, idx) => (
-            <>
+            <Fragment key={idx}>
               {idx >= 18 && idx < 22 && (
                 <div className="flex flex-col items-center gap-3">
                   <Image src={_.image} alt={_.name} className="h-[90px] w-[90px]" />
                   <p className="text-xs font-bold text-secondary">{_.name}</p>
                 </div>
               )}
-            </>
+            </Fragment>
           ))}
         </div>
+      </div>
+
+      <div className="block bg-primary pb-[77px] pt-20 lg:hidden">
+        <Swiper
+          className="yellow-invester-sw"
+          modules={[Autoplay, Pagination]}
+          effect="cards"
+          spaceBetween={16}
+          slidesPerView={3}
+          autoplay={true}
+          onSwiper={setSwiper}
+          onSlideChange={({ activeIndex }) => setSlideIndex(activeIndex)}
+        >
+          {itemList.map((_, idx, arr) => (
+            <SwiperSlide key={idx}>
+              <div className="flex flex-col items-center gap-3 px-6 font-poppins">
+                <div className="h-[90px] w-[90px] overflow-hidden rounded-full ">
+                  <Image src={_.image} alt={_.name} className="h-full w-full object-cover" />
+                </div>
+                <p className="text-center text-xs font-bold text-secondary">{_.name}</p>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </section>
   )

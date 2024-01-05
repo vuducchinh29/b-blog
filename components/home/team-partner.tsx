@@ -16,6 +16,7 @@ import { Autoplay, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useState } from 'react'
 import useWindowSize from 'hooks/use-window-size'
+import Logo from 'app/assets/images/logo.png'
 
 const partnerList = [
   {
@@ -230,13 +231,18 @@ export const TeamPartner = () => {
                 ) : null}
               </div>
             ))}
+
+            <div className="col-span-2 hidden lg:block">
+              <div className="flex h-[452px] flex-col items-center justify-center">
+                <Image src={Logo} alt="logo" className="w-[398px]" />
+                <p className="mt-[78px] text-center font-poppins text-base font-bold text-primary lg:text-2xl">
+                  Let us know if you'd like an introduction to any of our valuable partners!
+                </p>
+              </div>
+            </div>
           </div>
         )}
       </div>
-
-      <p className="mt-[29px] px-6 text-center font-poppins text-base font-bold text-primary lg:mt-[53px] lg:px-20 lg:text-2xl">
-        Let us know if you'd like an introduction to any of our valuable partners!
-      </p>
     </section>
   )
 }

@@ -46,7 +46,7 @@ export const OurPrinciples = () => {
   const [slideIndex, setSlideIndex] = useState(0)
 
   return (
-    <section className="bg-white p-0 lg:bg-primary lg:pb-[77px] lg:pt-[25px]">
+    <section className="bg-primary p-0 lg:pb-[77px] lg:pt-[25px]">
       <div className="">
         <div className="ml-20 hidden items-center text-[32px] font-bold leading-[67px] lg:flex">
           <div className="relative z-[2] text-primary">
@@ -59,7 +59,7 @@ export const OurPrinciples = () => {
             ></div>
           </div>
         </div>
-        <h2 className="home-title ml-6 lg:hidden">ADVISORY & MENTOR BOARDS</h2>
+        <h2 className="home-title ml-6 !text-white lg:hidden">ADVISORY & MENTOR BOARDS</h2>
       </div>
 
       <div className="mt-4 bg-primary pt-10 lg:mt-0 lg:hidden">

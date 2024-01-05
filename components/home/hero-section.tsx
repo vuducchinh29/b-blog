@@ -78,7 +78,7 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      <div className="mt-7 grid w-full grid-cols-1 gap-4 lg:mt-[150px] lg:hidden lg:grid-cols-3 lg:gap-[37px]">
+      <div className="mt-7 hidden w-full grid-cols-1 gap-4 lg:mt-[150px] lg:grid-cols-3 lg:gap-[37px]">
         {hots.map((_, idx) => (
           <div className="relative col-span-1" key={idx}>
             <a href={_.link} target="__blank">
