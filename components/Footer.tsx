@@ -38,26 +38,26 @@ const contacts = [
     image: TelegramIcon,
     link: 'https://t.me/barmychannel',
   },
-  {
-    name: 'Threads',
-    image: ThreadsIcon,
-    link: '#',
-  },
+  // {
+  //   name: 'Threads',
+  //   image: ThreadsIcon,
+  //   link: '#',
+  // },
   {
     name: 'Debank',
     image: DebankIcon,
     link: 'https://debank.com/profile/0x82e459f86d2993a29c86eba19b86cd5712a223eb/stream',
   },
-  {
-    name: 'Discord',
-    image: DiscordIcon,
-    link: '#',
-  },
-  {
-    name: 'Github',
-    image: GithubIcon,
-    link: '#',
-  },
+  // {
+  //   name: 'Discord',
+  //   image: DiscordIcon,
+  //   link: '#',
+  // },
+  // {
+  //   name: 'Github',
+  //   image: GithubIcon,
+  //   link: '#',
+  // },
 ]
 
 export default function Footer() {
