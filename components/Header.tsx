@@ -1,6 +1,6 @@
 'use client'
 
-import Logo from 'app/assets/images/logo.png'
+import Logo from 'app/assets/images/logo.svg'
 import Menu from 'app/assets/images/menu.svg'
 import MobileLogo from 'app/assets/images/mobile-logo.svg'
 

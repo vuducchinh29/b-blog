@@ -16,7 +16,7 @@ import { Autoplay, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useState } from 'react'
 import useWindowSize from 'hooks/use-window-size'
-import Logo from 'app/assets/images/logo.png'
+import Logo from 'app/assets/images/logo.svg'
 
 const partnerList = [
   {
