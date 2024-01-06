@@ -21,42 +21,42 @@ const contacts = [
   {
     name: 'Business@b.army',
     image: EmailIcon,
-    link: 'mailto:Business@b.army'
+    link: 'mailto:Business@b.army',
   },
   {
     name: 'X',
     image: XIcon,
-    link: '#'
+    link: 'https://twitter.com/BARMYGROUP',
   },
   {
     name: 'Binance Feed',
     image: BinanceFeedIcon,
-    link: 'https://www.binance.com/vi/feed/profile/B_ARMY'
+    link: 'https://www.binance.com/vi/feed/profile/B_ARMY',
   },
   {
     name: 'Telegram',
     image: TelegramIcon,
-    link: '#'
+    link: 'https://t.me/barmychannel',
   },
   {
     name: 'Threads',
     image: ThreadsIcon,
-    link: '#'
+    link: '#',
   },
   {
     name: 'Debank',
     image: DebankIcon,
-    link: 'https://debank.com/profile/0x82e459f86d2993a29c86eba19b86cd5712a223eb/stream'
+    link: 'https://debank.com/profile/0x82e459f86d2993a29c86eba19b86cd5712a223eb/stream',
   },
   {
     name: 'Discord',
     image: DiscordIcon,
-    link: '#'
+    link: '#',
   },
   {
     name: 'Github',
     image: GithubIcon,
-    link: '#'
+    link: '#',
   },
 ]
 
@@ -108,19 +108,22 @@ export default function Footer() {
           </div> */}
 
           <div className="mt-[40px] lg:mt-0">
-            <h3 className="text-[14px] lg:text-center font-bold uppercase lg:text-[24px] text-[#0F1E78]">Contact us</h3>
-            <div className='mt-[40px] lg:mt-[30px] grid lg:grid-cols-3'>
+            <h3 className="text-[14px] font-bold uppercase text-[#0F1E78] lg:text-center lg:text-[24px]">
+              Contact us
+            </h3>
+            <div className="mt-[40px] grid lg:mt-[30px] lg:grid-cols-3">
               {contacts.map((_, idx) => (
-                <div key={idx} className="flex items-center mr-[50px]">
+                <div key={idx} className="mr-[50px] flex items-center">
                   <Image src={_.image} className="" alt="bottom" />
-                  <a href={_.link} target='_blank' className="text-[#0F1E78] font-[600]">{_.name}</a>
+                  <a href={_.link} target="_blank" className="font-[600] text-[#0F1E78]">
+                    {_.name}
+                  </a>
                 </div>
               ))}
             </div>
           </div>
 
           <div className="hidden opacity-0 lg:block lg:w-[100px] lg:max-w-full"></div>
-
         </div>
 
         <div className="block space-y-6 border-t border-t-[#E6E8EC] pb-6 pt-[57px] lg:hidden">
