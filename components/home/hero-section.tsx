@@ -35,17 +35,17 @@ const hots = [
   {
     name: 'Raise Capital',
     icon: UptrendIcon,
-    link: 'https://forms.gle/XxbRieNsuh1ktd5P7',
+    link: 'https://docs.google.com/forms/d/e/1FAIpQLSdqz9G81lLEu0vyl9M8PbEYG2kSE2wv6ne5bNLFTVHcLkWF4g/viewform?usp=send_form',
   },
   {
     name: 'Go Penetrating',
     icon: GoPenetratingIcon,
-    link: 'https://forms.gle/XxbRieNsuh1ktd5P7',
+    link: 'https://docs.google.com/forms/d/e/1FAIpQLSdqz9G81lLEu0vyl9M8PbEYG2kSE2wv6ne5bNLFTVHcLkWF4g/viewform?usp=send_form',
   },
   {
     name: 'Join Our Accelerator Program',
     icon: AcceleratorIcon,
-    link: 'https://forms.gle/XxbRieNsuh1ktd5P7',
+    link: 'https://docs.google.com/forms/d/e/1FAIpQLSdqz9G81lLEu0vyl9M8PbEYG2kSE2wv6ne5bNLFTVHcLkWF4g/viewform?usp=send_form',
   },
 ]
 
