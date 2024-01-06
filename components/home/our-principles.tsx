@@ -92,7 +92,7 @@ export const OurPrinciples = () => {
                       {item}
                     </li>
                   ))}
-                  <li className="mt-2 list-inside list-none text-sm text-secondary">
+                  <li className="list-inside list-disc text-sm text-secondary">
                     {_.profile}:{' '}
                     <span>
                       <a href={_.link} className="" target={'_blank'}>
@@ -133,7 +133,7 @@ export const OurPrinciples = () => {
                     {item}
                   </li>
                 ))}
-                <li className="mt-2 list-inside list-none text-justify text-sm font-bold leading-[26px]">
+                <li className="list-inside list-disc text-justify text-sm font-bold leading-[26px]">
                   {_.profile}:{' '}
                   <span>
                     <a href={_.link} className="" target={'_blank'}>

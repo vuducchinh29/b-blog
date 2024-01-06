@@ -31,7 +31,7 @@ import { Fragment, useState } from 'react'
 const itemList = [
   { name: 'Waggle Network', image: WaggleNetworkImage },
   { name: 'Altered State Machine', image: AlteredStateMachineImage },
-  { name: 'Bomber Coin', image: BomberCoinImage },
+  { name: 'BNB48 Club', image: BNB48ClubImage },
   { name: 'Portal', image: PortalImage },
   { name: 'Dopamine', image: DopamineImage },
   { name: 'Fuel Network', image: FuelNetworkImage },
@@ -49,7 +49,6 @@ const itemList = [
   { name: 'Velodrome', image: VelodromeImage },
   { name: 'ApolloX', image: ApolloXImage },
   { name: 'Unisat', image: Unisat_Image },
-  { name: 'BNB48 Club', image: BNB48ClubImage },
   { name: 'DGG Network', image: DGGNetworkImage },
 ]
 
