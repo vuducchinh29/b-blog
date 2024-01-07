@@ -83,12 +83,13 @@ const partnerList = [
   {
     avatar: Partner06Img,
     name: 'KOLSNETWORK',
-    content1: [],
-    content2: (
-      <p className="">
-        <span className="text-primary">100+</span> global and Vietnamese KOLs on Twitter.
-      </p>
-    ),
+    content1: [
+      {
+        c1: '100+',
+        c2: 'Global and Vietnamese KOLs on Twitter',
+      },
+    ],
+    content2: '',
   },
   {
     avatar: Partner01Img,
@@ -180,7 +181,7 @@ export const TeamPartner = () => {
                     </div>
                   )}
                   {_.content1.length ? (
-                    <div className="space-y-1 font-poppins text-base font-semibold">
+                    <div className="space-y-1 font-poppins text-[14px] text-base font-semibold">
                       {_.content1.map((content, idx) => (
                         <div className="flex w-full" key={idx}>
                           <p className="w-[73px] text-primary">{content.c1}</p>
@@ -214,7 +215,7 @@ export const TeamPartner = () => {
                   </div>
                 )}
                 {_.content1.length ? (
-                  <div className="space-y-1 font-poppins text-base font-semibold">
+                  <div className="space-y-1 font-poppins text-[16px] text-base font-semibold">
                     {_.content1.map((content, idx) => (
                       <div className="flex w-full" key={idx}>
                         <p className="w-[73px] text-primary">{content.c1}</p>

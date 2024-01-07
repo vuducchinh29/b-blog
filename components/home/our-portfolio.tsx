@@ -74,7 +74,11 @@ export const OutPortfolio = () => {
             <Fragment key={idx}>
               {idx >= 0 && idx < 7 && (
                 <div className="flex flex-col items-center gap-3">
-                  <Image src={_.image} alt={_.name} className="h-[90px] w-[90px]" />
+                  <Image
+                    src={_.image}
+                    alt={_.name}
+                    className="h-[90px] w-[90px] overflow-hidden rounded-full border-2 border-[#D79F01]"
+                  />
                   <p className="text-xs font-bold text-secondary">{_.name}</p>
                 </div>
               )}
@@ -87,7 +91,11 @@ export const OutPortfolio = () => {
             <Fragment key={idx}>
               {idx >= 7 && idx < 13 && (
                 <div className="flex flex-col items-center gap-3">
-                  <Image src={_.image} alt={_.name} className="h-[90px] w-[90px]" />
+                  <Image
+                    src={_.image}
+                    alt={_.name}
+                    className="h-[90px] w-[90px] overflow-hidden rounded-full border-2 border-[#D79F01]"
+                  />
                   <p className="text-xs font-bold text-secondary">{_.name}</p>
                 </div>
               )}
@@ -100,7 +108,11 @@ export const OutPortfolio = () => {
             <Fragment key={idx}>
               {idx >= 13 && idx < 18 && (
                 <div className="flex flex-col items-center gap-3">
-                  <Image src={_.image} alt={_.name} className="h-[90px] w-[90px]" />
+                  <Image
+                    src={_.image}
+                    alt={_.name}
+                    className="h-[90px] w-[90px] overflow-hidden rounded-full border-2 border-[#D79F01]"
+                  />
                   <p className="text-xs font-bold text-secondary">{_.name}</p>
                 </div>
               )}
@@ -113,7 +125,11 @@ export const OutPortfolio = () => {
             <Fragment key={idx}>
               {idx >= 18 && idx < 22 && (
                 <div className="flex flex-col items-center gap-3">
-                  <Image src={_.image} alt={_.name} className="h-[90px] w-[90px]" />
+                  <Image
+                    src={_.image}
+                    alt={_.name}
+                    className="h-[90px] w-[90px] overflow-hidden rounded-full border-2 border-[#D79F01]"
+                  />
                   <p className="text-xs font-bold text-secondary">{_.name}</p>
                 </div>
               )}
@@ -136,7 +152,7 @@ export const OutPortfolio = () => {
           {itemList.map((_, idx, arr) => (
             <SwiperSlide key={idx}>
               <div className="flex flex-col items-center gap-3 px-6 font-poppins">
-                <div className="h-[90px] w-[90px] overflow-hidden rounded-full ">
+                <div className="h-[90px] w-[90px] overflow-hidden rounded-full border-2 border-[#D79F01]">
                   <Image src={_.image} alt={_.name} className="h-full w-full object-cover" />
                 </div>
                 <p className="text-center text-xs font-bold text-secondary">{_.name}</p>
