@@ -59,7 +59,7 @@ export const HeroSection = () => {
           </h2> */}
 
           <p className="mt-2 text-base font-bold uppercase leading-[20px] lg:mt-6 lg:text-[40px] lg:leading-[50px]">
-            TOP-TIER BLOCKCHAIN ECOSYSTEM TO PENETRATE THE{' '}
+            TOP-TIER BLOCKCHAIN VC ECOSYSTEM TO PENETRATE THE{' '}
             <span className="text-[#F03D26]">VIETNAM</span> MARKET
           </p>
 
