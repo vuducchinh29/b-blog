@@ -127,13 +127,13 @@ export const OurPrinciples = () => {
               <ul className="">
                 {_.detail.map((item, idx) => (
                   <li
-                    className="list-inside list-disc text-justify text-sm font-bold leading-[26px]"
+                    className="list-inside list-disc text-left text-sm font-bold leading-[26px]"
                     key={idx}
                   >
                     {item}
                   </li>
                 ))}
-                <li className="list-inside list-disc text-justify text-sm font-bold leading-[26px]">
+                <li className="list-inside list-disc text-left text-sm font-bold leading-[26px]">
                   {_.profile}:{' '}
                   <span>
                     <a href={_.link} className="" target={'_blank'}>
