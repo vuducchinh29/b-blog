@@ -18,7 +18,7 @@ const data = [
 
 const OurTeam = () => {
   return (
-    <div className="bg-secondary px-6 pb-[62px] lg:px-20">
+    <div className="bg-secondary px-6 pb-[62px] lg:px-20" id="team-partner">
       <h2 className="home-title !lg:text-primary pb-[25px] pt-4 !text-white lg:pb-[47px] lg:pt-[47px]">
         Our Team
       </h2>

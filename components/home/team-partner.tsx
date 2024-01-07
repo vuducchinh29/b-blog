@@ -139,7 +139,7 @@ export const TeamPartner = () => {
 
   return (
     <section className="relative pb-6 pt-6 lg:pb-16 lg:pt-16">
-      <div className="absolute -top-[111px] left-0" id="team-partner"></div>
+      <div className="absolute -top-[111px] left-0"></div>
       <div
         className="absolute -right-[145px] top-[20px] z-[1] hidden aspect-square w-[296px] 
         rounded-full bg-primary
