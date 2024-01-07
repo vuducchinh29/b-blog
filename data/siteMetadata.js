@@ -1,9 +1,9 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Leading Blockchain Incubator & Investment Platform',
+  title: 'B.ARMY: Top-tier Blockchain VC Ecosystem to penetrate the Vietnam Market',
   author: 'B.Army',
   headerTitle: 'B.Army',
-  description: 'B.Army - Leading Blockchain Incubator & Investment Platform',
+  description: 'B.ARMY: Top-tier Blockchain VC Ecosystem to penetrate the Vietnam Market',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://b.army',
