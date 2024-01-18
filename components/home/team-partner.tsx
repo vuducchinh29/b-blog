@@ -19,14 +19,14 @@ import useWindowSize from 'hooks/use-window-size'
 import Logo from 'app/assets/images/logo.svg'
 
 const partnerList = [
-  {
-    avatar: Partner05Img,
-    name: 'VIETNAM BLOCKCHAIN',
-    content1: [],
-    content2: (
-      <p className="">The first blockchain organization that was legally recognized in Vietnam.</p>
-    ),
-  },
+  // {
+  //   avatar: Partner05Img,
+  //   name: 'VIETNAM BLOCKCHAIN',
+  //   content1: [],
+  //   content2: (
+  //     <p className="">The first blockchain organization that was legally recognized in Vietnam.</p>
+  //   ),
+  // },
   {
     avatar: W3ASIA,
     name: 'W3 ASIA',
