@@ -233,7 +233,7 @@ export const TeamPartner = () => {
               </div>
             ))}
 
-            <div className="col-span-2 hidden lg:block">
+            <div className="col-span-3 hidden lg:block">
               <div className="flex h-[452px] flex-col items-center justify-center">
                 <Image src={Logo} alt="logo" className="w-[398px]" />
                 <p className="mt-[78px] text-center font-poppins text-base font-bold text-primary lg:text-2xl">
