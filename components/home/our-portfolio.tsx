@@ -2,13 +2,13 @@
 
 import DGGLogo from 'app/assets/images/dggnetwork.png'
 import Image from 'next/image'
-import WaggleNetworkImage from 'app/assets/images/LOGO INVEST/1. Waggle Network.png'
+import PrivaSea from 'app/assets/images/LOGO INVEST/1.PrivaSea.png'
 import AlteredStateMachineImage from 'app/assets/images/LOGO INVEST/2. Altered State Machine_.png'
-import BomberCoinImage from 'app/assets/images/LOGO INVEST/3. Bomber Coin.png'
+import ApeX from 'app/assets/images/LOGO INVEST/5.Apex.png'
 import PortalImage from 'app/assets/images/LOGO INVEST/4. Portal.jpg'
-import DopamineImage from 'app/assets/images/LOGO INVEST/5. Dopamine.png'
+import DopamineImage from 'app/assets/images/LOGO INVEST/3.Dopamine.png'
 import FuelNetworkImage from 'app/assets/images/LOGO INVEST/6. Fuel Network.jpg'
-import SoviUniverseImage from 'app/assets/images/LOGO INVEST/7. Sovi Universe.jpg'
+import Another1 from 'app/assets/images/LOGO INVEST/6.Another-1.png'
 import OpenOceanImage from 'app/assets/images/LOGO INVEST/8. OpenOcean.webp'
 import KyberNetworkCrystalImage from 'app/assets/images/LOGO INVEST/9. Kyber Network Crystal.jpg'
 import BiconomyImage from 'app/assets/images/LOGO INVEST/10. Biconomy.jpg'
@@ -29,27 +29,29 @@ import { Autoplay, Pagination } from 'swiper/modules'
 import { Fragment, useState } from 'react'
 
 const itemList = [
-  { name: 'Waggle Network', image: WaggleNetworkImage },
-  { name: 'Altered State Machine', image: AlteredStateMachineImage },
-  { name: 'BNB48 Club', image: BNB48ClubImage },
+  { name: 'PrivaSea', image: PrivaSea },
   { name: 'Portal', image: PortalImage },
   { name: 'Dopamine', image: DopamineImage },
   { name: 'Fuel Network', image: FuelNetworkImage },
-  { name: 'Sovi Universe', image: SoviUniverseImage },
+  { name: 'ApeX', image: ApeX },
+  { name: 'Another-1', image: Another1 },
+  { name: 'Altered State Machine', image: AlteredStateMachineImage },
   { name: 'OpenOcean', image: OpenOceanImage },
-  { name: 'Kyber Network Crystal', image: KyberNetworkCrystalImage },
   { name: 'Biconomy', image: BiconomyImage },
   { name: 'QuickSwap', image: QuickSwapImage },
-  { name: 'Metavault', image: MetavaultImage },
+  { name: 'Metavault Trade', image: MetavaultImage },
   { name: 'Arbitrum', image: ArbitrumImage },
   { name: 'Camelot', image: CamelotImage },
-  { name: 'Radiant', image: RadiantImage },
-  { name: 'Matic', image: MaticImage },
-  { name: 'Optimism', image: OptimismImage },
-  { name: 'Velodrome', image: VelodromeImage },
   { name: 'ApolloX', image: ApolloXImage },
   { name: 'Unisat', image: Unisat_Image },
+  { name: 'BNB48 Club', image: BNB48ClubImage },
   { name: 'DGG Network', image: DGGNetworkImage },
+  // { name: 'Sovi Universe', image: SoviUniverseImage },
+  // { name: 'Kyber Network Crystal', image: KyberNetworkCrystalImage },
+  // { name: 'Radiant', image: RadiantImage },
+  // { name: 'Matic', image: MaticImage },
+  // { name: 'Optimism', image: OptimismImage },
+  // { name: 'Velodrome', image: VelodromeImage },
 ]
 
 export const OutPortfolio = () => {
@@ -72,13 +74,15 @@ export const OutPortfolio = () => {
         <div className="flex justify-center gap-[95px]">
           {itemList.map((_, idx) => (
             <Fragment key={idx}>
-              {idx >= 0 && idx < 7 && (
+              {idx >= 0 && idx < 6 && (
                 <div className="flex flex-col items-center gap-3">
-                  <Image
-                    src={_.image}
-                    alt={_.name}
-                    className="h-[90px] w-[90px] overflow-hidden rounded-full border-2 border-[#D79F01]"
-                  />
+                  <div className="overflow-hidden rounded-full border-2 border-[#D79F01] bg-white">
+                    <Image
+                      src={_.image}
+                      alt={_.name}
+                      className="h-[90px] w-[90px] rounded-full !p-[2px]"
+                    />
+                  </div>
                   <p className="text-xs font-bold text-secondary">{_.name}</p>
                 </div>
               )}
@@ -89,13 +93,15 @@ export const OutPortfolio = () => {
         <div className="flex justify-center gap-[95px]">
           {itemList.map((_, idx) => (
             <Fragment key={idx}>
-              {idx >= 7 && idx < 13 && (
+              {idx >= 6 && idx < 12 && (
                 <div className="flex flex-col items-center gap-3">
-                  <Image
-                    src={_.image}
-                    alt={_.name}
-                    className="h-[90px] w-[90px] overflow-hidden rounded-full border-2 border-[#D79F01]"
-                  />
+                  <div className="overflow-hidden rounded-full border-2 border-[#D79F01] bg-white">
+                    <Image
+                      src={_.image}
+                      alt={_.name}
+                      className="h-[90px] w-[90px] rounded-full !p-[2px]"
+                    />
+                  </div>
                   <p className="text-xs font-bold text-secondary">{_.name}</p>
                 </div>
               )}
@@ -106,13 +112,15 @@ export const OutPortfolio = () => {
         <div className="flex justify-center gap-[95px]">
           {itemList.map((_, idx) => (
             <Fragment key={idx}>
-              {idx >= 13 && idx < 18 && (
+              {idx >= 12 && idx < 18 && (
                 <div className="flex flex-col items-center gap-3">
-                  <Image
-                    src={_.image}
-                    alt={_.name}
-                    className="h-[90px] w-[90px] overflow-hidden rounded-full border-2 border-[#D79F01]"
-                  />
+                  <div className="overflow-hidden rounded-full border-2 border-[#D79F01] bg-white">
+                    <Image
+                      src={_.image}
+                      alt={_.name}
+                      className="h-[90px] w-[90px] rounded-full !p-[2px]"
+                    />
+                  </div>
                   <p className="text-xs font-bold text-secondary">{_.name}</p>
                 </div>
               )}
@@ -128,7 +136,7 @@ export const OutPortfolio = () => {
                   <Image
                     src={_.image}
                     alt={_.name}
-                    className="h-[90px] w-[90px] overflow-hidden rounded-full border-2 border-[#D79F01]"
+                    className="h-[90px] w-[90px] overflow-hidden rounded-full border-2 border-[#D79F01] !p-[3px]"
                   />
                   <p className="text-xs font-bold text-secondary">{_.name}</p>
                 </div>
