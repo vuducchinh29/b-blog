@@ -26,7 +26,7 @@ export default function Home({ posts }) {
 
       <OurPrinciples />
 
-      <OurTeam />
+      {/* <OurTeam /> */}
 
       <TeamPartner />
       {/* <OutAdvisory /> */}
