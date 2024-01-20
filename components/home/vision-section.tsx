@@ -20,14 +20,12 @@ export const VisionSection = () => {
           className="mt-4 text-center font-poppins text-sm font-medium leading-[29.19px] text-primary
           lg:mt-6 lg:text-left lg:text-xl lg:leading-[41px]"
         >
-          Using our vast web2 user resources and thriving social networks within Vietnam, where user
-          acquisition costs are notably low, B.ARMY excels in providing comprehensive support to
-          projects right from their inception.
+          <b>B.ARMY</b> is Ventures and Blockchain Ecosystem in Vietnam that aims to invest/incubate
+          and penetrate projects into Vietnamese market, helping projects acquiring & onboarding
+          Web3 users from our existing large number of Web2 users.
           <br /> <br />
-          With our extensive local market knowledge, developer resources, and the advantage of
-          Vietnam's cost-effective user base, we provide end-to-end support, spanning from
-          pre-funding aid to nurturing early adopters and enabling the scalable expansion of their
-          user base
+          <b>B.ARMY</b> ecosystem includes two of the top social companies in Vietnam with more than
+          200 billions Tiktok views & more than 100M subscribers and more than 300 KOLs.
         </p>
       </div>
     </section>
