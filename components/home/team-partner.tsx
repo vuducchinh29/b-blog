@@ -28,6 +28,17 @@ const partnerList = [
   //   ),
   // },
   {
+    avatar: HKBA,
+    name: 'Hong Kong Blockchain Association 香港區塊鏈協會',
+    content1: [],
+    content2: (
+      <p className="">
+        Leading industry association in Hong Kong and the Greater Bay Area for Blockchain and Web3
+        technology
+      </p>
+    ),
+  },
+  {
     avatar: W3ASIA,
     name: 'W3 ASIA',
     content1: [
@@ -41,17 +52,6 @@ const partnerList = [
       },
     ],
     content2: '',
-  },
-  {
-    avatar: HKBA,
-    name: 'Hong Kong Blockchain Association 香港區塊鏈協會',
-    content1: [],
-    content2: (
-      <p className="">
-        Leading industry association in Hong Kong and the Greater Bay Area for Blockchain and Web3
-        technology
-      </p>
-    ),
   },
   {
     avatar: Partner03Img,
