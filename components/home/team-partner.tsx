@@ -201,38 +201,41 @@ export const TeamPartner = () => {
             ))}
           </Swiper>
         ) : (
-          <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-7">
-            {partnerList.map((_, idx) => (
-              <div
-                key={idx}
-                className="col-span-1 flex h-[452px] flex-col items-center bg-secondary px-6 pb-[38px] pt-[52px]"
-              >
-                <Image src={_.avatar} alt="avatar" className="mb-[27px] h-[125px]" />
-                <p className="mb-[8px] text-base font-bold leading-[32px] text-primary">{_.name}</p>
-                {_.name === 'W3 ASIA' && (
-                  <div className="mb-[8px] text-center font-poppins text-base font-semibold text-white">
-                    Vietnam's top tech firm for web/mobile app development.
-                  </div>
-                )}
-                {_.content1.length ? (
-                  <div className="space-y-1 font-poppins text-[16px] text-base font-semibold">
-                    {_.content1.map((content, idx) => (
-                      <div className="flex w-full" key={idx}>
-                        <p className="w-[73px] text-primary">{content.c1}</p>
-                        <p className="w-[calc(100%-73px)] text-white">{content.c2}</p>
-                      </div>
-                    ))}
-                  </div>
-                ) : null}
+          <>
+            <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-7">
+              {partnerList.map((_, idx) => (
+                <div
+                  key={idx}
+                  className="col-span-1 flex h-[452px] flex-col items-center bg-secondary px-6 pb-[38px] pt-[52px]"
+                >
+                  <Image src={_.avatar} alt="avatar" className="mb-[27px] h-[125px]" />
+                  <p className="mb-[8px] text-base font-bold leading-[32px] text-primary">
+                    {_.name}
+                  </p>
+                  {_.name === 'W3 ASIA' && (
+                    <div className="mb-[8px] text-center font-poppins text-base font-semibold text-white">
+                      Vietnam's top tech firm for web/mobile app development.
+                    </div>
+                  )}
+                  {_.content1.length ? (
+                    <div className="space-y-1 font-poppins text-[16px] text-base font-semibold">
+                      {_.content1.map((content, idx) => (
+                        <div className="flex w-full" key={idx}>
+                          <p className="w-[73px] text-primary">{content.c1}</p>
+                          <p className="w-[calc(100%-73px)] text-white">{content.c2}</p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : null}
 
-                {_.content2 ? (
-                  <div className="text-center font-poppins text-base font-semibold text-white">
-                    {_.content2}
-                  </div>
-                ) : null}
-              </div>
-            ))}
-
+                  {_.content2 ? (
+                    <div className="text-center font-poppins text-base font-semibold text-white">
+                      {_.content2}
+                    </div>
+                  ) : null}
+                </div>
+              ))}
+            </div>
             <div className="col-span-3 hidden lg:block">
               <div className="flex h-[452px] flex-col items-center justify-center">
                 <Image src={Logo} alt="logo" className="w-[398px]" />
@@ -241,7 +244,7 @@ export const TeamPartner = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </>
         )}
       </div>
     </section>
