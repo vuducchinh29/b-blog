@@ -86,7 +86,7 @@ export const OutPortfolio = () => {
                         <Image
                           src={_.image}
                           alt={_.name}
-                          className="h-full w-full rounded-full object-cover object-center !p-[2px]"
+                          className="h-full w-full rounded-full object-cover object-center !p-[4px]"
                         />
                       </div>
                       <p className="text-xs font-bold text-secondary">{_.name}</p>
@@ -121,7 +121,7 @@ export const OutPortfolio = () => {
                     <Image
                       src={_.image}
                       alt={_.name}
-                      className="h-full w-full rounded-full object-cover !p-[2px]"
+                      className="h-full w-full rounded-full object-cover !p-[4px]"
                     />
                   </div>
                   <p className="text-center text-xs font-bold text-secondary">{_.name}</p>
