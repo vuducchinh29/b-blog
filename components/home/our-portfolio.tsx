@@ -66,7 +66,7 @@ export const OutPortfolio = () => {
         ></div>
         <div className="relative z-[2] rounded-[62.3px] border-[12.82px] border-white px-5 pb-[84px] pt-[109px]">
           <div className="absolute -top-[calc((95px+13px)/2)] left-1/2 z-[3] flex h-[95px] w-[426px] -translate-x-1/2 items-center justify-center rounded-[32px] bg-secondary">
-            <p className="font-bold text-primary">Our Investment</p>
+            <p className="font-poppins text-[31px] font-bold text-primary">Our Investment</p>
           </div>
 
           <div className="flex justify-center space-y-[54px] px-6">
@@ -114,8 +114,12 @@ export const OutPortfolio = () => {
           {itemList.map((_, idx, arr) => (
             <SwiperSlide key={idx}>
               <div className="flex flex-col items-center gap-3 px-6 font-poppins">
-                <div className="h-[90px] w-[90px] overflow-hidden rounded-full border-2 border-[#D79F01]">
-                  <Image src={_.image} alt={_.name} className="h-full w-full object-cover" />
+                <div className="h-[90px] w-[90px] overflow-hidden rounded-full border-2 border-[#D79F01] bg-white">
+                  <Image
+                    src={_.image}
+                    alt={_.name}
+                    className="h-full w-full rounded-full object-cover !p-[2px]"
+                  />
                 </div>
                 <p className="text-center text-xs font-bold text-secondary">{_.name}</p>
               </div>
