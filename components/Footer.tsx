@@ -62,7 +62,7 @@ const contacts = [
 
 export default function Footer() {
   return (
-    <footer className="footer-shadow bg-white font-poppins" id="join-us">
+    <footer className="footer-shadow bg-white font-poppins">
       <div className=" px-6 pt-[38px] lg:px-[38px]">
         {/* <div className="pb-[43.5px] lg:pb-0">
           <Image src={Logo} alt="b.army logo" className="h-7 w-[118px] lg:h-[42px] lg:w-[171px]" />

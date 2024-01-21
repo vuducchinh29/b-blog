@@ -29,12 +29,12 @@ const partnerList = [
   // },
   {
     avatar: HKBA,
-    name: 'Hong Kong Blockchain Association 香港區塊鏈協會',
+    name: 'Hong Kong Blockchain Association',
     content1: [],
     content2: (
       <p className="">
-        Leading industry association in Hong Kong and the Greater Bay Area for Blockchain and Web3
-        technology
+        Leading industry association in Hong Kong
+        <br /> and the Greater Bay Area for Blockchain <br /> and Web3 technology.
       </p>
     ),
   },
@@ -49,44 +49,6 @@ const partnerList = [
       {
         c1: '25+',
         c2: 'Partners from all fields',
-      },
-    ],
-    content2: '',
-  },
-  {
-    avatar: Partner03Img,
-    name: 'REDAO (Aka LauchZone)',
-    content1: [
-      {
-        c1: '$1B ',
-        c2: 'Highest monthly volume.',
-      },
-      {
-        c1: '8th',
-        c2: 'Ranked 8th in MVB program.',
-      },
-      {
-        c1: '50+',
-        c2: 'Supported 50+ global projects with each project raising $1-2 million.',
-      },
-      {
-        c1: '260K+',
-        c2: 'Followers on Twitter.',
-      },
-      {
-        c1: '40K+',
-        c2: 'Members on Telegram community.',
-      },
-    ],
-    content2: '',
-  },
-  {
-    avatar: Partner06Img,
-    name: 'KOLSNETWORK',
-    content1: [
-      {
-        c1: '100+',
-        c2: 'Global and Vietnamese KOLs on Twitter',
       },
     ],
     content2: '',
@@ -116,15 +78,47 @@ const partnerList = [
     content1: [
       {
         c1: '100B+',
-        c2: 'Views on TikTok',
+        c2: (
+          <p className="">
+            The first MCN with 60B+ views on Tiktok
+            <br />
+            (The largest TikTok network in SEA).
+          </p>
+        ),
       },
       {
         c1: '500+',
         c2: 'Exclusive management of the most popular Creators/ KOLs in Vietnam.',
       },
+    ],
+    content2: '',
+  },
+  {
+    avatar: Partner03Img,
+    name: 'REDAO (Aka LauchZone)',
+    content1: [
       {
-        c1: '60B+',
-        c2: 'The first MCN with 60B+ views on Tiktok (the largest TikTok network in SEA).',
+        c1: '50+',
+        c2: 'Supported 50+ global projects with each project raising $1-2 million.',
+      },
+      {
+        c1: '260K+',
+        c2: 'Followers on Twitter.',
+      },
+      {
+        c1: '40K+',
+        c2: 'Members on Telegram community.',
+      },
+    ],
+    content2: '',
+  },
+  {
+    avatar: Partner06Img,
+    name: 'KOLSNETWORK',
+    content1: [
+      {
+        c1: '100+',
+        c2: 'Global and Vietnamese KOLs on Twitter',
       },
     ],
     content2: '',
@@ -175,9 +169,20 @@ export const TeamPartner = () => {
                   <p className="mb-[8px] text-base font-bold leading-[32px] text-primary">
                     {_.name}
                   </p>
+                  {_.name === 'Hong Kong Blockchain Association' && (
+                    <div className="mb-[8px] text-center font-poppins text-base font-semibold text-primary">
+                      香港區塊鏈協會
+                    </div>
+                  )}
                   {_.name === 'W3 ASIA' && (
-                    <div className="mb-[8px] text-center font-poppins text-base font-semibold text-white">
+                    <div className="mb-[8px] text-center font-poppins text-base font-semibold text-primary">
                       Vietnam's top tech firm for web/mobile app development.
+                    </div>
+                  )}
+                  {_.name === 'REDAO (Aka LauchZone)' && (
+                    <div className="mb-[8px] text-center font-poppins text-base font-semibold text-primary">
+                      ReDao is a community-oriented blockchain investment fund with great
+                      achievement.
                     </div>
                   )}
                   {_.content1.length ? (
@@ -212,9 +217,20 @@ export const TeamPartner = () => {
                   <p className="mb-[8px] text-base font-bold leading-[32px] text-primary">
                     {_.name}
                   </p>
+                  {_.name === 'Hong Kong Blockchain Association' && (
+                    <div className="mb-[8px] text-center font-poppins text-base font-semibold text-primary">
+                      香港區塊鏈協會
+                    </div>
+                  )}
                   {_.name === 'W3 ASIA' && (
-                    <div className="mb-[8px] text-center font-poppins text-base font-semibold text-white">
+                    <div className="mb-[8px] text-center font-poppins text-base font-semibold text-primary">
                       Vietnam's top tech firm for web/mobile app development.
+                    </div>
+                  )}
+                  {_.name === 'REDAO (Aka LauchZone)' && (
+                    <div className="mb-[8px] text-center font-poppins text-base font-semibold text-primary">
+                      ReDao is a community-oriented blockchain investment fund with great
+                      achievement.
                     </div>
                   )}
                   {_.content1.length ? (

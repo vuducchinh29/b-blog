@@ -55,7 +55,7 @@ export const OutPortfolio = () => {
 
   return (
     <section className="mt-7 lg:mt-[85px]">
-      <div className="mb-[14px] px-6 lg:mb-0 lg:px-20">
+      <div className="mb-[14px] hidden px-6 lg:mb-0 lg:block lg:px-20">
         <h2 className="home-title !lg:leading-0 !leading-[49px]">Investment Portfolio</h2>
       </div>
 
@@ -82,7 +82,7 @@ export const OutPortfolio = () => {
                 <div key={idx} className="col-span-1">
                   {idx >= 0 && idx < 22 && (
                     <div className="flex flex-col items-center gap-3">
-                      <div className="aspect-square w-[84px] overflow-hidden rounded-full border-2 border-[#D79F01] bg-white">
+                      <div className="aspect-square w-[84px] overflow-hidden rounded-full border-2 border-[#D79F01]">
                         <Image
                           src={_.image}
                           alt={_.name}
@@ -98,34 +98,38 @@ export const OutPortfolio = () => {
           </div>
         </div>
       </div>
-
-      <div className="block bg-primary pb-[77px] pt-20 lg:hidden">
-        <Swiper
-          className="yellow-invester-sw"
-          modules={[Autoplay, Pagination, Grid]}
-          effect="cards"
-          spaceBetween={16}
-          slidesPerView={3}
-          autoplay={true}
-          onSwiper={setSwiper}
-          onSlideChange={({ activeIndex }) => setSlideIndex(activeIndex)}
-          grid={{ rows: 2, fill: 'row' }}
-        >
-          {itemList.map((_, idx, arr) => (
-            <SwiperSlide key={idx}>
-              <div className="flex flex-col items-center gap-3 px-6 font-poppins">
-                <div className="h-[90px] w-[90px] overflow-hidden rounded-full border-2 border-[#D79F01] bg-white">
-                  <Image
-                    src={_.image}
-                    alt={_.name}
-                    className="h-full w-full rounded-full object-cover !p-[2px]"
-                  />
+      <div className="block bg-primary lg:hidden">
+        <h2 className="home-title !lg:leading-0 ml-6 block py-10 !leading-[49px] lg:hidden">
+          Investment Portfolio
+        </h2>
+        <div className="pb-[77px]">
+          <Swiper
+            className="yellow-invester-sw"
+            modules={[Autoplay, Pagination, Grid]}
+            effect="cards"
+            spaceBetween={16}
+            slidesPerView={3}
+            autoplay={true}
+            onSwiper={setSwiper}
+            onSlideChange={({ activeIndex }) => setSlideIndex(activeIndex)}
+            grid={{ rows: 2, fill: 'row' }}
+          >
+            {itemList.map((_, idx, arr) => (
+              <SwiperSlide key={idx}>
+                <div className="flex flex-col items-center gap-3 px-6 font-poppins">
+                  <div className="h-[90px] w-[90px] overflow-hidden rounded-full border-2 border-[#D79F01]">
+                    <Image
+                      src={_.image}
+                      alt={_.name}
+                      className="h-full w-full rounded-full object-cover !p-[2px]"
+                    />
+                  </div>
+                  <p className="text-center text-xs font-bold text-secondary">{_.name}</p>
                 </div>
-                <p className="text-center text-xs font-bold text-secondary">{_.name}</p>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
     </section>
   )

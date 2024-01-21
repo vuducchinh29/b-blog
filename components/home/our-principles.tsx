@@ -39,7 +39,10 @@ const data = [
 
 export const OurPrinciples = () => {
   return (
-    <section className="bg-secondary p-0 lg:bg-primary lg:pb-[77px] lg:pt-[100px]">
+    <section
+      className="bg-secondary p-0 lg:bg-primary lg:pb-[77px] lg:pt-[100px]"
+      id="team-partner"
+    >
       <div className="">
         <div className="ml-20 hidden items-center text-[32px] font-bold leading-[67px] lg:flex">
           <div className="relative z-[2] text-primary">
@@ -66,7 +69,11 @@ export const OurPrinciples = () => {
                 {_.name}{' '}
                 <span>
                   <a href={_.linkedin} target="_blank">
-                    <Image className="ml-2 h-[33px] w-[33px]" src={Linkedin} alt={_.name} />
+                    <Image
+                      className="relative top-2 ml-2 h-[20px] w-[20px]"
+                      src={Linkedin}
+                      alt={_.name}
+                    />
                   </a>
                 </span>
               </p>
