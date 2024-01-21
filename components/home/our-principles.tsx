@@ -3,11 +3,11 @@
 import 'swiper/css'
 import 'swiper/css/pagination'
 
+import Linkedin from 'app/assets/images/linkedIn-icon.png'
 import MrThanhDao from 'app/assets/images/our-team-01.png'
 import MrLogan from 'app/assets/images/our-team-02.png'
 import MsJosephine from 'app/assets/images/our-team-03.png'
 import MsDaisy from 'app/assets/images/our-team-04.png'
-import Linkedin from 'app/assets/images/linkedIn-icon.png'
 import Image from 'next/image'
 
 const data = [
@@ -39,7 +39,7 @@ const data = [
 
 export const OurPrinciples = () => {
   return (
-    <section className="bg-secondary p-0 lg:bg-primary lg:pb-[77px] lg:pt-[25px]">
+    <section className="bg-secondary p-0 lg:bg-primary lg:pb-[77px] lg:pt-[100px]">
       <div className="">
         <div className="ml-20 hidden items-center text-[32px] font-bold leading-[67px] lg:flex">
           <div className="relative z-[2] text-primary">
@@ -47,7 +47,7 @@ export const OurPrinciples = () => {
               <span className="font-bold text-white">Our Team</span>
             </p>
             <div
-              className="absolute -left-[20rem] -top-[40%] z-[1] hidden aspect-square 
+              className="absolute -left-[20rem] top-[120px] z-[1] hidden aspect-square 
               w-[443px] -translate-y-1/2 rounded-full bg-secondary lg:block"
             ></div>
           </div>

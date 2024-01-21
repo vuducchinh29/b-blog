@@ -1,32 +1,27 @@
 'use client'
 
-import DGGLogo from 'app/assets/images/dggnetwork.png'
-import Image from 'next/image'
 import PrivaSea from 'app/assets/images/LOGO INVEST/1.PrivaSea.png'
-import AlteredStateMachineImage from 'app/assets/images/LOGO INVEST/2. Altered State Machine_.png'
-import ApeX from 'app/assets/images/LOGO INVEST/5.Apex.png'
-import PortalImage from 'app/assets/images/LOGO INVEST/4. Portal.jpg'
-import DopamineImage from 'app/assets/images/LOGO INVEST/3.Dopamine.png'
-import FuelNetworkImage from 'app/assets/images/LOGO INVEST/6. Fuel Network.jpg'
-import Another1 from 'app/assets/images/LOGO INVEST/6.Another-1.png'
-import OpenOceanImage from 'app/assets/images/LOGO INVEST/8. OpenOcean.webp'
-import KyberNetworkCrystalImage from 'app/assets/images/LOGO INVEST/9. Kyber Network Crystal.jpg'
 import BiconomyImage from 'app/assets/images/LOGO INVEST/10. Biconomy.jpg'
 import QuickSwapImage from 'app/assets/images/LOGO INVEST/11. QuickSwap.png'
 import MetavaultImage from 'app/assets/images/LOGO INVEST/12. Metavault.png'
 import ArbitrumImage from 'app/assets/images/LOGO INVEST/13. Arbitrum.jpg'
 import CamelotImage from 'app/assets/images/LOGO INVEST/14. Camelot_.jpg'
-import RadiantImage from 'app/assets/images/LOGO INVEST/16. Radiant.png'
-import MaticImage from 'app/assets/images/LOGO INVEST/15. Matic.png'
-import OptimismImage from 'app/assets/images/LOGO INVEST/17. Optimism.png'
-import VelodromeImage from 'app/assets/images/LOGO INVEST/18. Velodrome_.png'
 import ApolloXImage from 'app/assets/images/LOGO INVEST/19. ApolloX.png'
+import AlteredStateMachineImage from 'app/assets/images/LOGO INVEST/2. Altered State Machine_.png'
 import Unisat_Image from 'app/assets/images/LOGO INVEST/20. Unisat_.jpg'
 import BNB48ClubImage from 'app/assets/images/LOGO INVEST/21. BNB48 Club.png'
 import DGGNetworkImage from 'app/assets/images/LOGO INVEST/22. DGG Network_.jpg'
+import DopamineImage from 'app/assets/images/LOGO INVEST/3.Dopamine.png'
+import PortalImage from 'app/assets/images/LOGO INVEST/4. Portal.jpg'
+import ApeX from 'app/assets/images/LOGO INVEST/5.Apex.png'
+import FuelNetworkImage from 'app/assets/images/LOGO INVEST/6. Fuel Network.jpg'
+import Another1 from 'app/assets/images/LOGO INVEST/6.Another-1.png'
+import OpenOceanImage from 'app/assets/images/LOGO INVEST/8. OpenOcean.webp'
+import Image from 'next/image'
+import { useState } from 'react'
+import 'swiper/css/grid'
+import { Autoplay, Grid, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Pagination } from 'swiper/modules'
-import { Fragment, useState } from 'react'
 
 const itemList = [
   { name: 'PrivaSea', image: PrivaSea },
@@ -63,99 +58,58 @@ export const OutPortfolio = () => {
       <div className="mb-[14px] px-6 lg:mb-0 lg:px-20">
         <h2 className="home-title !lg:leading-0 !leading-[49px]">Investment Portfolio</h2>
       </div>
-      <div className="mt-5 hidden space-y-[54px] bg-primary px-6 lg:block lg:px-20 lg:pb-[89px] lg:pt-[97px]">
-        {/* <Image src={DGGLogo} alt="DGG Network Logo" className="blog w-[172px] lg:w-[264px]" />
-        <div className="block font-poppins font-bold text-white">
-          <p className="text-[11px] lg:text-[17px]">Gaming</p>
-          <p className="text-[13px] lg:text-[20px]">DGG Network </p>
-          <p className="text-[9px] lg:text-sm">NFT Game Publisher and Incubator in SEA</p>
-        </div> */}
 
-        <div className="flex justify-center gap-[95px]">
-          {itemList.map((_, idx) => (
-            <Fragment key={idx}>
-              {idx >= 0 && idx < 6 && (
-                <div className="flex flex-col items-center gap-3">
-                  <div className="overflow-hidden rounded-full border-2 border-[#D79F01] bg-white">
-                    <Image
-                      src={_.image}
-                      alt={_.name}
-                      className="h-[90px] w-[90px] rounded-full !p-[2px]"
-                    />
-                  </div>
-                  <p className="text-xs font-bold text-secondary">{_.name}</p>
-                </div>
-              )}
-            </Fragment>
-          ))}
-        </div>
+      <div className="relative mt-5 hidden bg-primary lg:block lg:px-20 lg:pb-[89px] lg:pt-[97px]">
+        <div
+          className="absolute -bottom-10 -right-[10px] z-[1] hidden aspect-square 
+          w-[244px] rounded-full bg-secondary lg:block"
+        ></div>
+        <div className="relative z-[2] rounded-[62.3px] border-[12.82px] border-white px-5 pb-[84px] pt-[109px]">
+          <div className="absolute -top-[calc((95px+13px)/2)] left-1/2 z-[3] flex h-[95px] w-[426px] -translate-x-1/2 items-center justify-center rounded-[32px] bg-secondary">
+            <p className="font-bold text-primary">Our Investment</p>
+          </div>
 
-        <div className="flex justify-center gap-[95px]">
-          {itemList.map((_, idx) => (
-            <Fragment key={idx}>
-              {idx >= 6 && idx < 12 && (
-                <div className="flex flex-col items-center gap-3">
-                  <div className="overflow-hidden rounded-full border-2 border-[#D79F01] bg-white">
-                    <Image
-                      src={_.image}
-                      alt={_.name}
-                      className="h-[90px] w-[90px] rounded-full !p-[2px]"
-                    />
-                  </div>
-                  <p className="text-xs font-bold text-secondary">{_.name}</p>
-                </div>
-              )}
-            </Fragment>
-          ))}
-        </div>
+          <div className="flex justify-center space-y-[54px] px-6">
+            {/* <Image src={DGGLogo} alt="DGG Network Logo" className="blog w-[172px] lg:w-[264px]" />
+          <div className="block font-poppins font-bold text-white">
+            <p className="text-[11px] lg:text-[17px]">Gaming</p>
+            <p className="text-[13px] lg:text-[20px]">DGG Network </p>
+            <p className="text-[9px] lg:text-sm">NFT Game Publisher and Incubator in SEA</p>
+          </div> */}
 
-        <div className="flex justify-center gap-[95px]">
-          {itemList.map((_, idx) => (
-            <Fragment key={idx}>
-              {idx >= 12 && idx < 18 && (
-                <div className="flex flex-col items-center gap-3">
-                  <div className="overflow-hidden rounded-full border-2 border-[#D79F01] bg-white">
-                    <Image
-                      src={_.image}
-                      alt={_.name}
-                      className="h-[90px] w-[90px] rounded-full !p-[2px]"
-                    />
-                  </div>
-                  <p className="text-xs font-bold text-secondary">{_.name}</p>
+            <div className="grid max-w-[804px] grid-cols-4 gap-6 lg:grid-cols-5 xl:grid-cols-6 xl:gap-[59px]">
+              {itemList.map((_, idx) => (
+                <div key={idx} className="col-span-1">
+                  {idx >= 0 && idx < 22 && (
+                    <div className="flex flex-col items-center gap-3">
+                      <div className="aspect-square w-[84px] overflow-hidden rounded-full border-2 border-[#D79F01] bg-white">
+                        <Image
+                          src={_.image}
+                          alt={_.name}
+                          className="h-full w-full rounded-full object-cover object-center !p-[2px]"
+                        />
+                      </div>
+                      <p className="text-xs font-bold text-secondary">{_.name}</p>
+                    </div>
+                  )}
                 </div>
-              )}
-            </Fragment>
-          ))}
-        </div>
-
-        <div className="flex justify-center gap-[95px]">
-          {itemList.map((_, idx) => (
-            <Fragment key={idx}>
-              {idx >= 18 && idx < 22 && (
-                <div className="flex flex-col items-center gap-3">
-                  <Image
-                    src={_.image}
-                    alt={_.name}
-                    className="h-[90px] w-[90px] overflow-hidden rounded-full border-2 border-[#D79F01] !p-[3px]"
-                  />
-                  <p className="text-xs font-bold text-secondary">{_.name}</p>
-                </div>
-              )}
-            </Fragment>
-          ))}
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
       <div className="block bg-primary pb-[77px] pt-20 lg:hidden">
         <Swiper
           className="yellow-invester-sw"
-          modules={[Autoplay, Pagination]}
+          modules={[Autoplay, Pagination, Grid]}
           effect="cards"
           spaceBetween={16}
           slidesPerView={3}
           autoplay={true}
           onSwiper={setSwiper}
           onSlideChange={({ activeIndex }) => setSlideIndex(activeIndex)}
+          grid={{ rows: 2, fill: 'row' }}
         >
           {itemList.map((_, idx, arr) => (
             <SwiperSlide key={idx}>
