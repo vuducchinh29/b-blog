@@ -31,7 +31,7 @@ const data = [
   },
   {
     name: 'Ms. Daisy M',
-    title: 'Head of Barmy Ventures',
+    title: 'Head of Investment',
     image: MsDaisy,
     linkedin: 'https://www.linkedin.com/in/daisy-m-0050b199/',
   },
