@@ -118,7 +118,7 @@ const partnerList = [
     content1: [
       {
         c1: '100+',
-        c2: 'Global and Vietnamese KOLs on Twitter',
+        c2: 'Global and Vietnamese Blockchain KOLs on Twitter',
       },
     ],
     content2: '',
