@@ -181,8 +181,7 @@ export const TeamPartner = () => {
                   )}
                   {_.name === 'REDAO (Aka LauchZone)' && (
                     <div className="mb-[8px] text-center font-poppins text-base font-semibold text-primary">
-                      ReDao is a community-oriented blockchain investment fund with great
-                      achievement.
+                      ReDao is a community-oriented blockchain investment fund.
                     </div>
                   )}
                   {_.content1.length ? (
@@ -229,8 +228,7 @@ export const TeamPartner = () => {
                   )}
                   {_.name === 'REDAO (Aka LauchZone)' && (
                     <div className="mb-[8px] text-center font-poppins text-base font-semibold text-primary">
-                      ReDao is a community-oriented blockchain investment fund with great
-                      achievement.
+                      ReDao is a community-oriented blockchain investment fund.
                     </div>
                   )}
                   {_.content1.length ? (
