@@ -22,7 +22,7 @@ const infoList = [
     value: '1K+',
   },
   {
-    name: 'Blockchain Communties',
+    name: 'Blockchain Communities',
     value: '25',
   },
   {
