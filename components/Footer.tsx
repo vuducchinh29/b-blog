@@ -107,7 +107,7 @@ export default function Footer() {
             </div>
           </div> */}
 
-          <div className="mt-[40px] mb-[40px] lg:mt-0">
+          <div className="mb-[40px] mt-[40px] lg:mt-0">
             <h3 className="text-[14px] font-bold uppercase text-[#0F1E78] lg:text-center lg:text-[24px]">
               Contact us
             </h3>
@@ -126,7 +126,7 @@ export default function Footer() {
           <div className="hidden opacity-0 lg:block lg:w-[100px] lg:max-w-full"></div>
         </div>
 
-        <div className="block space-y-6 border-t border-t-[#E6E8EC] pb-6 pt-6 lg:pt-[57px] lg:hidden">
+        <div className="block space-y-6 border-t border-t-[#E6E8EC] pb-6 pt-6 lg:hidden lg:pt-[57px]">
           <p className="text-xs leading-5 text-[#777E90]">
             Copyright © 2023 B.Army. All rights reserved
           </p>
