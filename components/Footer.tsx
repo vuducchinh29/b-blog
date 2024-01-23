@@ -28,11 +28,11 @@ const contacts = [
     image: XIcon,
     link: 'https://twitter.com/BARMYGROUP',
   },
-  {
-    name: 'Binance Feed',
-    image: BinanceFeedIcon,
-    link: 'https://www.binance.com/vi/feed/profile/B_ARMY',
-  },
+  // {
+  //   name: 'Binance Feed',
+  //   image: BinanceFeedIcon,
+  //   link: 'https://www.binance.com/vi/feed/profile/B_ARMY',
+  // },
   {
     name: 'Telegram',
     image: TelegramIcon,
@@ -43,11 +43,11 @@ const contacts = [
   //   image: ThreadsIcon,
   //   link: '#',
   // },
-  {
-    name: 'Debank',
-    image: DebankIcon,
-    link: 'https://debank.com/profile/0x82e459f86d2993a29c86eba19b86cd5712a223eb/stream',
-  },
+  // {
+  //   name: 'Debank',
+  //   image: DebankIcon,
+  //   link: 'https://debank.com/profile/0x82e459f86d2993a29c86eba19b86cd5712a223eb/stream',
+  // },
   // {
   //   name: 'Discord',
   //   image: DiscordIcon,
@@ -107,7 +107,7 @@ export default function Footer() {
             </div>
           </div> */}
 
-          <div className="mt-[40px] lg:mt-0">
+          <div className="mt-[40px] mb-[40px] lg:mt-0">
             <h3 className="text-[14px] font-bold uppercase text-[#0F1E78] lg:text-center lg:text-[24px]">
               Contact us
             </h3>
@@ -126,7 +126,7 @@ export default function Footer() {
           <div className="hidden opacity-0 lg:block lg:w-[100px] lg:max-w-full"></div>
         </div>
 
-        <div className="block space-y-6 border-t border-t-[#E6E8EC] pb-6 pt-[57px] lg:hidden">
+        <div className="block space-y-6 border-t border-t-[#E6E8EC] pb-6 pt-6 lg:pt-[57px] lg:hidden">
           <p className="text-xs leading-5 text-[#777E90]">
             Copyright © 2023 B.Army. All rights reserved
           </p>
