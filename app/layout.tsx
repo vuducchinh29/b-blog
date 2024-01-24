@@ -92,6 +92,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
+      <meta content={siteMetadata.title} property="og:title" />
+      <meta content={siteMetadata.description} property="og:description" />
+      <meta content={siteMetadata.socialBanner} property="og:image" />
+      <meta content="summary_large_image" name="og:card" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <body className="bg-white text-black antialiased dark:bg-white dark:text-black">
         <ThemeProviders>
