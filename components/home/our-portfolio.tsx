@@ -1,22 +1,22 @@
 'use client'
 
 import PrivaSea from 'app/assets/images/LOGO INVEST/1.PrivaSea.png'
-import BiconomyImage from 'app/assets/images/LOGO INVEST/10. Biconomy.jpg'
-import QuickSwapImage from 'app/assets/images/LOGO INVEST/11. QuickSwap.png'
-import MetavaultImage from 'app/assets/images/LOGO INVEST/12. Metavault.png'
-import ArbitrumImage from 'app/assets/images/LOGO INVEST/13. Arbitrum.jpg'
-import CamelotImage from 'app/assets/images/LOGO INVEST/14. Camelot_.jpg'
-import ApolloXImage from 'app/assets/images/LOGO INVEST/19. ApolloX.png'
-import AlteredStateMachineImage from 'app/assets/images/LOGO INVEST/2. Altered State Machine_.png'
-import Unisat_Image from 'app/assets/images/LOGO INVEST/20. Unisat_.jpg'
-import BNB48ClubImage from 'app/assets/images/LOGO INVEST/21. BNB48 Club.png'
-import DGGNetworkImage from 'app/assets/images/LOGO INVEST/22. DGG Network_.jpg'
+import BiconomyImage from 'app/assets/images/LOGO INVEST/9.Biconomy.png'
+import QuickSwapImage from 'app/assets/images/LOGO INVEST/10.QuickSwap.png'
+import MetavaultImage from 'app/assets/images/LOGO INVEST/11.MetavaultTrade.png'
+import ArbitrumImage from 'app/assets/images/LOGO INVEST/12.Arbitrum.png'
+import CamelotImage from 'app/assets/images/LOGO INVEST/13.Camelot.png'
+import ApolloXImage from 'app/assets/images/LOGO INVEST/14.ApolloX.png'
+import AlteredStateMachineImage from 'app/assets/images/LOGO INVEST/7.AlteredStateMachine.png'
+import Unisat_Image from 'app/assets/images/LOGO INVEST/15.Unisat.png'
+import BNB48ClubImage from 'app/assets/images/LOGO INVEST/16.BNB48Club.png'
+import DGGNetworkImage from 'app/assets/images/LOGO INVEST/17.DGGNetwork.png'
 import DopamineImage from 'app/assets/images/LOGO INVEST/3.Dopamine.png'
-import PortalImage from 'app/assets/images/LOGO INVEST/4. Portal.jpg'
+import PortalImage from 'app/assets/images/LOGO INVEST/2.Portal.png'
 import ApeX from 'app/assets/images/LOGO INVEST/5.Apex.png'
-import FuelNetworkImage from 'app/assets/images/LOGO INVEST/6. Fuel Network.jpg'
+import FuelNetworkImage from 'app/assets/images/LOGO INVEST/4.FuelNetwork.png'
 import Another1 from 'app/assets/images/LOGO INVEST/6.Another-1.png'
-import OpenOceanImage from 'app/assets/images/LOGO INVEST/8. OpenOcean.webp'
+import OpenOceanImage from 'app/assets/images/LOGO INVEST/8.OpenOcean.png'
 import Image from 'next/image'
 import { useState } from 'react'
 import 'swiper/css/grid'
@@ -82,14 +82,14 @@ export const OutPortfolio = () => {
                 <div key={idx} className="col-span-1">
                   {idx >= 0 && idx < 22 && (
                     <div className="flex flex-col items-center gap-3">
-                      <div className="aspect-square w-[84px] overflow-hidden rounded-full border-2 border-[#D79F01]">
+                      <div className="aspect-square w-[84px] overflow-hidden">
                         <Image
                           src={_.image}
                           alt={_.name}
-                          className="h-full w-full rounded-full object-cover object-center !p-[4px]"
+                          className="h-full w-full rounded-full object-cover object-center"
                         />
                       </div>
-                      <p className="text-xs font-bold text-secondary">{_.name}</p>
+                      <p className="text-center text-xs font-bold text-secondary">{_.name}</p>
                     </div>
                   )}
                 </div>
@@ -117,14 +117,16 @@ export const OutPortfolio = () => {
             {itemList.map((_, idx, arr) => (
               <SwiperSlide key={idx}>
                 <div className="flex flex-col items-center gap-3 px-6 font-poppins">
-                  <div className="h-[90px] w-[90px] overflow-hidden rounded-full border-2 border-[#D79F01]">
+                  <div className="h-[90px] w-[90px] overflow-hidden">
                     <Image
                       src={_.image}
                       alt={_.name}
-                      className="h-full w-full rounded-full object-cover !p-[4px]"
+                      className="h-full w-full rounded-full object-cover"
                     />
                   </div>
-                  <p className="text-center text-xs font-bold text-secondary">{_.name}</p>
+                  <p className="text-center text-center text-xs font-bold text-secondary">
+                    {_.name}
+                  </p>
                 </div>
               </SwiperSlide>
             ))}
