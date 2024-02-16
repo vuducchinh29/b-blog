@@ -25,6 +25,7 @@ import { Autoplay, Grid, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 const itemList = [
+  { name: 'KIP Protocol', image: KIPImage },
   { name: 'PrivaSea', image: PrivaSea },
   { name: 'Portal', image: PortalImage },
   { name: 'Dopamine', image: DopamineImage },
@@ -42,7 +43,6 @@ const itemList = [
   { name: 'Unisat', image: Unisat_Image },
   { name: 'BNB48 Club', image: BNB48ClubImage },
   { name: 'DGG Network', image: DGGNetworkImage },
-  { name: 'KIP Protocol', image: KIPImage },
   // { name: 'Sovi Universe', image: SoviUniverseImage },
   // { name: 'Kyber Network Crystal', image: KyberNetworkCrystalImage },
   // { name: 'Radiant', image: RadiantImage },
