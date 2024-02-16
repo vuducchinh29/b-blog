@@ -16,8 +16,8 @@ interface LayoutProps {
 }
 
 export default function PostMinimal({ content, next, prev, children }: LayoutProps) {
-  const { title, cover } = content
-  const displayImage = `${base_url}/assets/${cover}?quality=25`
+  const { title, thumbnail } = content
+  const displayImage = `${base_url}/assets/${thumbnail}?quality=25`
 
   return (
     <SectionContainer>
