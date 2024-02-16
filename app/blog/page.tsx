@@ -16,7 +16,7 @@ export const generateStaticParams = async () => {
 }
 
 async function getData() {
-  const res = await fetch(`${base_url}/items/Blog?limit=${100}`, {
+  const res = await fetch(`${base_url}/items/blogs?limit=${100}`, {
     next: { revalidate: 60 },
   })
   return (await res.json()).data

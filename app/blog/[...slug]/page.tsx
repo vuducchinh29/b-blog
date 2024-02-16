@@ -81,7 +81,7 @@ export const generateStaticParams = async () => {
 }
 
 async function getData(id: string) {
-  const post = (await blogAPI.getBlogById(Number(id))).data
+  const post = (await blogAPI.getBlogById(id)).data
 
   return post
 }

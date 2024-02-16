@@ -23,7 +23,8 @@ export interface BlogContent {
   content?: string
   author: string
   description: string
-  cover: string
+  thumbnail: string
+  slug: string
 }
 interface ListLayoutProps {
   posts: BlogContent[]
@@ -130,10 +131,10 @@ export default function ListLayoutWithTags({
           <div className="w-full sm:w-[calc(100%-358px-24px)]">
             <ul className="space-y-[13px] lg:space-y-4">
               {displayPosts.map((post) => {
-                const { id, title, tags, cover } = post
+                const { id, title, description, tags, thumbnail, slug } = post
                 return (
                   <li className="border border-primary" key={id}>
-                    <Link href={`/blog/${id}`} className="text-gray-900 dark:text-gray-100 ">
+                    <Link href={`/blog/${slug}`} className="text-gray-900 dark:text-gray-100 ">
                       <div className="space-y-2 p-3 lg:p-4">
                         {/* <div className="">
                           <dl>
@@ -145,7 +146,7 @@ export default function ListLayoutWithTags({
                         </div> */}
                         <div className="flex gap-[15px] lg:gap-5 ">
                           <img
-                            src={`${base_url}/assets/${cover}?quality=25`}
+                            src={`${base_url}/assets/${thumbnail}?quality=25`}
                             alt=""
                             className="h-[142px] w-[125px] object-cover lg:w-[170px]"
                           />
@@ -163,6 +164,9 @@ export default function ListLayoutWithTags({
                               </div>
                               <div className="prose line-clamp-3 max-w-none text-base font-medium text-primary">
                                 {title}
+                              </div>
+                              <div className="prose line-clamp-3 max-w-none text-base font-light text-primary mb-3">
+                                {description}
                               </div>
                             </div>
                             <div className="flex items-center">
