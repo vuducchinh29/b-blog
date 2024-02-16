@@ -165,7 +165,7 @@ export default function ListLayoutWithTags({
                               <div className="prose line-clamp-3 max-w-none text-base font-medium text-primary">
                                 {title}
                               </div>
-                              <div className="prose line-clamp-3 max-w-none text-base font-light text-primary mb-3">
+                              <div className="prose mb-3 line-clamp-3 max-w-none text-base font-light text-primary">
                                 {description}
                               </div>
                             </div>
