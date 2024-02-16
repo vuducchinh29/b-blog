@@ -1,6 +1,6 @@
 import GoPenetratingIcon from 'app/assets/images/go-penetrating.png'
-import VietName_LG from 'app/assets/images/hero-section-large.png'
-import VietName_SM from 'app/assets/images/hero-section-small.png'
+import VietName_LG from 'app/assets/images/hero-section-large.svg'
+import VietName_SM from 'app/assets/images/hero-section-small.svg'
 import HotBg2 from 'app/assets/images/info-box-2.png'
 import HotBg from 'app/assets/images/info-box.png'
 import AcceleratorIcon from 'app/assets/images/join-our-accelerator-program.png'
@@ -22,7 +22,7 @@ const infoList = [
     value: '1K+',
   },
   {
-    name: 'Blockchain Communties',
+    name: 'Blockchain Communities',
     value: '25',
   },
   {
@@ -35,17 +35,17 @@ const hots = [
   {
     name: 'Raise Capital',
     icon: UptrendIcon,
-    link: 'https://forms.gle/XxbRieNsuh1ktd5P7',
+    link: 'https://docs.google.com/forms/d/e/1FAIpQLSdqz9G81lLEu0vyl9M8PbEYG2kSE2wv6ne5bNLFTVHcLkWF4g/viewform?usp=send_form',
   },
   {
     name: 'Go Penetrating',
     icon: GoPenetratingIcon,
-    link: 'https://forms.gle/DjgHpojJSAGaR5D6A ',
+    link: 'https://docs.google.com/forms/d/e/1FAIpQLSdqz9G81lLEu0vyl9M8PbEYG2kSE2wv6ne5bNLFTVHcLkWF4g/viewform?usp=send_form',
   },
   {
     name: 'Join Our Accelerator Program',
     icon: AcceleratorIcon,
-    link: 'https://forms.gle/5eJDYjUiseQ1xDDj7 ',
+    link: 'https://docs.google.com/forms/d/e/1FAIpQLSdqz9G81lLEu0vyl9M8PbEYG2kSE2wv6ne5bNLFTVHcLkWF4g/viewform?usp=send_form',
   },
 ]
 
@@ -59,7 +59,7 @@ export const HeroSection = () => {
           </h2> */}
 
           <p className="mt-2 text-base font-bold uppercase leading-[20px] lg:mt-6 lg:text-[40px] lg:leading-[50px]">
-            TOP-TIER BLOCKCHAIN ECOSYSTEM TO PENETRATE THE{' '}
+            TOP-TIER BLOCKCHAIN VC ECOSYSTEM TO PENETRATE THE{' '}
             <span className="text-[#F03D26]">VIETNAM</span> MARKET
           </p>
 
@@ -78,7 +78,7 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      <div className="mt-7 grid w-full grid-cols-1 gap-4 lg:mt-[150px] lg:hidden lg:grid-cols-3 lg:gap-[37px]">
+      <div className="mt-7 hidden w-full grid-cols-1 gap-4 lg:mt-[150px] lg:grid-cols-3 lg:gap-[37px]">
         {hots.map((_, idx) => (
           <div className="relative col-span-1" key={idx}>
             <a href={_.link} target="__blank">

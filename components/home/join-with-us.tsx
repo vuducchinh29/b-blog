@@ -11,14 +11,17 @@ const hots = [
   {
     name: 'Raise Capital',
     icon: UptrendIcon,
+    link: 'https://docs.google.com/forms/d/e/1FAIpQLSdqz9G81lLEu0vyl9M8PbEYG2kSE2wv6ne5bNLFTVHcLkWF4g/viewform?usp=send_form',
   },
   {
     name: 'Go Penetrating',
     icon: GoPenetratingIcon,
+    link: 'https://docs.google.com/forms/d/e/1FAIpQLSdqz9G81lLEu0vyl9M8PbEYG2kSE2wv6ne5bNLFTVHcLkWF4g/viewform?usp=send_form',
   },
   {
     name: 'Join Our Accelerator Program',
     icon: AcceleratorIcon,
+    link: 'https://docs.google.com/forms/d/e/1FAIpQLSdqz9G81lLEu0vyl9M8PbEYG2kSE2wv6ne5bNLFTVHcLkWF4g/viewform?usp=send_form',
   },
 ]
 
@@ -32,17 +35,19 @@ export const JoinWithUs = () => {
       <div className="mt-4 grid w-full grid-cols-1 gap-4 lg:mt-6 lg:grid-cols-3 lg:gap-[37px]">
         {hots.map((_, idx) => (
           <div className="relative col-span-1" key={idx}>
-            <div className="absolute left-0 top-0 z-[2] flex h-full w-full items-center gap-5 p-[34px] lg:gap-6 lg:p-10">
-              <Image src={_.icon} alt="icon" />
-              <p
-                className={classNames(
-                  'font-poppins text-base font-bold lg:text-[19px]',
-                  idx === 0 ? 'text-white' : 'text-primary'
-                )}
-              >
-                {_.name}
-              </p>
-            </div>
+            <a href={_.link} target="__blank">
+              <div className="absolute left-0 top-0 z-[2] flex h-full w-full items-center gap-5 p-[34px] lg:gap-6 lg:p-10">
+                <Image src={_.icon} alt="icon" />
+                <p
+                  className={classNames(
+                    'font-poppins text-base font-bold lg:text-[19px]',
+                    idx === 0 ? 'text-white' : 'text-primary'
+                  )}
+                >
+                  {_.name}
+                </p>
+              </div>
+            </a>
             <Image
               src={idx === 0 ? HotBg : HotBg2}
               alt="hot item"

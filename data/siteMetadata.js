@@ -1,17 +1,16 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Leading Blockchain Incubator & Investment Platform',
+  title: 'B.ARMY: Top-tier Blockchain VC Ecosystem to penetrate the Vietnam Market',
   author: 'B.Army',
   headerTitle: 'B.Army',
-  description: 'B.Army - Leading Blockchain Incubator & Investment Platform',
+  description: 'B.ARMY: Top-tier Blockchain VC Ecosystem to penetrate the Vietnam Market',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
-  siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
-  siteLogo: '/static/images/logo.png',
+  siteUrl: 'https://b.army',
+  siteLogo: '/static/images/logo.svg',
   socialBanner: '/static/images/twitter-card.png',
   mastodon: 'https://mastodon.social/@mastodonuser',
-  email: 'address@yoursite.com',
+  email: 'Business@b.army',
   github: 'https://github.com',
   twitter: 'https://twitter.com/Twitter',
   facebook: 'https://facebook.com',

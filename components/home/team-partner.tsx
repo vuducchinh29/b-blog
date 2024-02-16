@@ -9,13 +9,50 @@ import Partner03Img from 'app/assets/images/partner-03.svg'
 import Partner04Img from 'app/assets/images/partner-04.svg'
 import Partner05Img from 'app/assets/images/partner-05.svg'
 import Partner06Img from 'app/assets/images/partner-06.svg'
+import W3ASIA from 'app/assets/images/W3ASIA.svg'
+import HKBA from 'app/assets/images/HKBA.svg'
 import Image from 'next/image'
 import { Autoplay, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useState } from 'react'
 import useWindowSize from 'hooks/use-window-size'
+import Logo from 'app/assets/images/logo.svg'
 
 const partnerList = [
+  // {
+  //   avatar: Partner05Img,
+  //   name: 'VIETNAM BLOCKCHAIN',
+  //   content1: [],
+  //   content2: (
+  //     <p className="">The first blockchain organization that was legally recognized in Vietnam.</p>
+  //   ),
+  // },
+  {
+    avatar: HKBA,
+    name: 'Hong Kong Blockchain Association',
+    content1: [],
+    content2: (
+      <p className="">
+        Leading industry association in Hong Kong
+        <br /> and the Greater Bay Area for Blockchain <br /> and Web3 technology.
+      </p>
+    ),
+  },
+  {
+    avatar: W3ASIA,
+    name: 'W3 ASIA',
+    content1: [
+      {
+        c1: '40+',
+        c2: 'Blockchain Developers',
+      },
+      {
+        c1: '25+',
+        c2: 'Partners from all fields',
+      },
+    ],
+    content2: '',
+  },
   {
     avatar: Partner01Img,
     name: 'THEANH 28',
@@ -41,31 +78,25 @@ const partnerList = [
     content1: [
       {
         c1: '100B+',
-        c2: 'Views on TikTok',
+        c2: (
+          <p className="">
+            The first MCN with 60B+ views on Tiktok
+            <br />
+            (The largest TikTok network in SEA).
+          </p>
+        ),
       },
       {
         c1: '500+',
         c2: 'Exclusive management of the most popular Creators/ KOLs in Vietnam.',
-      },
-      {
-        c1: '60B+',
-        c2: 'The first MCN with 60B+ views on Tiktok (the largest TikTok network in SEA).',
       },
     ],
     content2: '',
   },
   {
     avatar: Partner03Img,
-    name: 'LAUNCHZONE | REDAO',
+    name: 'REDAO (Aka LauchZone)',
     content1: [
-      {
-        c1: '$1B ',
-        c2: 'Highest monthly volume.',
-      },
-      {
-        c1: '8th',
-        c2: 'Ranked 8th in MVB program.',
-      },
       {
         c1: '50+',
         c2: 'Supported 50+ global projects with each project raising $1-2 million.',
@@ -82,42 +113,15 @@ const partnerList = [
     content2: '',
   },
   {
-    avatar: Partner04Img,
-    name: 'METAHUB',
+    avatar: Partner06Img,
+    name: 'KOLSNETWORK',
     content1: [
       {
         c1: '100+',
-        c2: 'Hosted events / year.',
-      },
-      {
-        c1: '200+',
-        c2: 'Network community - projects - exchange all over the world.',
+        c2: 'Global and Vietnamese Blockchain KOLs on Twitter',
       },
     ],
     content2: '',
-  },
-  {
-    avatar: Partner05Img,
-    name: 'VIETNAM BLOCKCHAIN',
-    content1: [],
-    content2: (
-      <p className="">
-        The first blockchain organization that was legally recognized in Vietnam .
-        <br />
-        <span className="text-primary">30K+</span> Members |{' '}
-        <span className="text-primary">50+</span> Partners
-      </p>
-    ),
-  },
-  {
-    avatar: Partner06Img,
-    name: 'KOLSNETWORK',
-    content1: [],
-    content2: (
-      <p className="">
-        <span className="text-primary">100+</span> global and Vietnamese KOLs on Twitter.
-      </p>
-    ),
   },
 ]
 
@@ -129,7 +133,7 @@ export const TeamPartner = () => {
 
   return (
     <section className="relative pb-6 pt-6 lg:pb-16 lg:pt-16">
-      <div className="absolute -top-[111px] left-0" id="team-partner"></div>
+      <div className="absolute -top-[111px] left-0"></div>
       <div
         className="absolute -right-[145px] top-[20px] z-[1] hidden aspect-square w-[296px] 
         rounded-full bg-primary
@@ -141,7 +145,7 @@ export const TeamPartner = () => {
         lg:block"
       ></div>
       <div className="relative z-[2] px-6 font-poppins lg:px-20">
-        <h2 className="home-title !text-primary">Team & Partner</h2>
+        <h2 className="home-title !text-primary">Network Partners</h2>
 
         <p className="py-4 text-sm leading-[26px] text-primary lg:pb-7 lg:pt-6 lg:text-xl lg:font-bold">
           We collaborate closely with best-in-class partners across the blockchain ecosystem
@@ -165,8 +169,23 @@ export const TeamPartner = () => {
                   <p className="mb-[8px] text-base font-bold leading-[32px] text-primary">
                     {_.name}
                   </p>
+                  {_.name === 'Hong Kong Blockchain Association' && (
+                    <div className="mb-[8px] text-center font-poppins text-base font-semibold text-primary">
+                      香港區塊鏈協會
+                    </div>
+                  )}
+                  {_.name === 'W3 ASIA' && (
+                    <div className="mb-[8px] text-center font-poppins text-base font-semibold text-primary">
+                      Vietnam's top tech firm for web/mobile app development.
+                    </div>
+                  )}
+                  {_.name === 'REDAO (Aka LauchZone)' && (
+                    <div className="mb-[8px] text-center font-poppins text-base font-semibold text-primary">
+                      ReDao is a community-oriented blockchain investment fund.
+                    </div>
+                  )}
                   {_.content1.length ? (
-                    <div className="space-y-1 font-poppins text-base font-semibold">
+                    <div className="space-y-1 font-poppins text-[14px] text-base font-semibold">
                       {_.content1.map((content, idx) => (
                         <div className="flex w-full" key={idx}>
                           <p className="w-[73px] text-primary">{content.c1}</p>
@@ -186,39 +205,62 @@ export const TeamPartner = () => {
             ))}
           </Swiper>
         ) : (
-          <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-7">
-            {partnerList.map((_, idx) => (
-              <div
-                key={idx}
-                className="col-span-1 flex h-[452px] flex-col items-center bg-secondary px-6 pb-[38px] pt-[52px]"
-              >
-                <Image src={_.avatar} alt="avatar" className="mb-[27px] h-[125px]" />
-                <p className="mb-[8px] text-base font-bold leading-[32px] text-primary">{_.name}</p>
-                {_.content1.length ? (
-                  <div className="space-y-1 font-poppins text-base font-semibold">
-                    {_.content1.map((content, idx) => (
-                      <div className="flex w-full" key={idx}>
-                        <p className="w-[73px] text-primary">{content.c1}</p>
-                        <p className="w-[calc(100%-73px)] text-white">{content.c2}</p>
-                      </div>
-                    ))}
-                  </div>
-                ) : null}
+          <>
+            <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-7">
+              {partnerList.map((_, idx) => (
+                <div
+                  key={idx}
+                  className="col-span-1 flex h-[452px] flex-col items-center bg-secondary px-6 pb-[38px] pt-[52px]"
+                >
+                  <Image src={_.avatar} alt="avatar" className="mb-[27px] h-[125px]" />
+                  <p className="mb-[8px] text-base font-bold leading-[32px] text-primary">
+                    {_.name}
+                  </p>
+                  {_.name === 'Hong Kong Blockchain Association' && (
+                    <div className="mb-[8px] text-center font-poppins text-base font-semibold text-primary">
+                      香港區塊鏈協會
+                    </div>
+                  )}
+                  {_.name === 'W3 ASIA' && (
+                    <div className="mb-[8px] text-center font-poppins text-base font-semibold text-primary">
+                      Vietnam's top tech firm for web/mobile app development.
+                    </div>
+                  )}
+                  {_.name === 'REDAO (Aka LauchZone)' && (
+                    <div className="mb-[8px] text-center font-poppins text-base font-semibold text-primary">
+                      ReDao is a community-oriented blockchain investment fund.
+                    </div>
+                  )}
+                  {_.content1.length ? (
+                    <div className="space-y-1 font-poppins text-[16px] text-base font-semibold">
+                      {_.content1.map((content, idx) => (
+                        <div className="flex w-full" key={idx}>
+                          <p className="w-[73px] text-primary">{content.c1}</p>
+                          <p className="w-[calc(100%-73px)] text-white">{content.c2}</p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : null}
 
-                {_.content2 ? (
-                  <div className="text-center font-poppins text-base font-semibold text-white">
-                    {_.content2}
-                  </div>
-                ) : null}
+                  {_.content2 ? (
+                    <div className="text-center font-poppins text-base font-semibold text-white">
+                      {_.content2}
+                    </div>
+                  ) : null}
+                </div>
+              ))}
+            </div>
+            <div className="col-span-3 hidden lg:block">
+              <div className="flex h-[452px] flex-col items-center justify-center">
+                <Image src={Logo} alt="logo" className="w-[398px]" />
+                <p className="mt-[78px] text-center font-poppins text-base font-bold text-primary lg:text-2xl">
+                  Let us know if you'd like an introduction to any of our valuable partners!
+                </p>
               </div>
-            ))}
-          </div>
+            </div>
+          </>
         )}
       </div>
-
-      <p className="mt-[29px] px-6 text-center font-poppins text-base font-bold text-primary lg:mt-[53px] lg:px-20 lg:text-2xl">
-        Let us know if you'd like an introduction to any of our valuable partners!
-      </p>
     </section>
   )
 }
