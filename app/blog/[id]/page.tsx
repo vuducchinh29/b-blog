@@ -1,5 +1,13 @@
 import 'css/prism.css'
 import 'katex/dist/katex.css'
+// core styles shared by all of react-notion-x (required)
+import 'react-notion-x/src/styles.css'
+
+// used for code syntax highlighting (optional)
+import 'prismjs/themes/prism-tomorrow.css'
+
+// used for rendering equations (optional)
+import 'katex/dist/katex.min.css'
 
 import siteMetadata from '@/data/siteMetadata'
 import PostBanner from '@/layouts/PostBanner'
@@ -10,6 +18,9 @@ import blogAPI from 'apis/blog-api'
 import { base_url } from 'configs/env'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+
+import { NotionPage } from '@/components/NotionPage'
+import { NotionAPI } from 'notion-client'
 
 const defaultLayout = 'PostLayout'
 const layouts = {
@@ -83,13 +94,18 @@ export const generateStaticParams = async () => {
 }
 
 async function getData(id: string) {
-  const post = (await blogAPI.getBlogById(id)).data[0]
-
-  return post
+  // const post = (await blogAPI.getBlogById(id)).data[0]
+  const pageId = '067dd719a912471ea9a3ac10710e7fdf'
+  const notion = new NotionAPI()
+  // return post
+  return (await notion?.getPage(pageId)) as unknown
 }
 
 export default async function Page({ params }: { params: { id: string } }) {
   const post = await getData(params.id)
+
+  console.log(11, post)
+
   if (!post) {
     return notFound()
   }
@@ -97,16 +113,18 @@ export default async function Page({ params }: { params: { id: string } }) {
   const prev = { path: '/blog/1', title: '' }
   const next = { path: '/blog/2', title: '' }
 
-  const mainContent = post
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const mainContent = post as any
 
   const Layout = layouts.PostCustom
 
   return (
-    <>
-      <Layout content={mainContent} authorDetails={mainContent.author} next={next} prev={prev}>
-        {/* <MDXLayoutRenderer code={post.body.code} components={components} toc={post.toc} /> */}
-        <div className="text-primary" dangerouslySetInnerHTML={{ __html: post.content }}></div>
-      </Layout>
-    </>
+    // <>
+    //   <Layout content={mainContent} authorDetails={mainContent.author} next={next} prev={prev}>
+    //     {/* <MDXLayoutRenderer code={post.body.code} components={components} toc={post.toc} /> */}
+    //     <div className="text-primary" dangerouslySetInnerHTML={{ __html: post.content }}></div>
+    //   </Layout>
+    // </>
+    <NotionPage recordMap={mainContent.recordMap} />
   )
 }
