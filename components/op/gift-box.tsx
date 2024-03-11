@@ -34,6 +34,7 @@ const init_state = {
 }
 export default function GiftBoxAnimation() {
   const [isDone, setIsDone] = useState<boolean>(false)
+  const [gift, setGift] = useState({ name: 'Quà 3', image: '', probability: 1 })
   const [state, setState] = useReducer(
     (state, new_state) => ({
       ...state,
@@ -46,9 +47,10 @@ export default function GiftBoxAnimation() {
 
   const onOpen = useCallback(() => {
     const seed = getSeedFromURL() + getDailyUnixTime()
-    const gift = selectGift(seed, gifts)
+    const g = selectGift(seed, gifts)
     setIsDone(true)
-    console.log('gift', gift)
+    console.log('gift', g)
+    setGift(g)
   }, [])
 
   const animate = useCallback(() => {
@@ -97,7 +99,7 @@ export default function GiftBoxAnimation() {
   }
 
   return (
-    <div className="relative h-40 w-full">
+    <div className="relative h-52 w-full">
       <Confetti open={jump === 'jump'} />
       <div className="img-container">
         {/* <Image className={`kuku ${jump}`} src={kuku} alt="kuku" /> */}
@@ -105,6 +107,10 @@ export default function GiftBoxAnimation() {
           <Image src={box} alt="box" />
         </button>
         <Image className={`lid ${move} ${rotating} ${rotated}`} src={boxLid} alt="box-lid" />
+      </div>
+      <div className="flex flex-col items-center">
+        <Image src={gift.image} alt="Gift image" />
+        <p className=''>{gift.name}</p>
       </div>
     </div>
   )
