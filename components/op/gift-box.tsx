@@ -7,7 +7,7 @@ import box from 'app/assets/images/box.png'
 import Image from 'next/image'
 import Confetti from './confetti'
 import DemoGift from 'app/assets/images/demo-gift.jpeg'
-import {QRS} from './QR'
+import { QRS } from './QR'
 import { useRouter } from 'next/navigation'
 interface Gift {
   name: string
@@ -109,7 +109,7 @@ export default function GiftBoxAnimation() {
     if (!qr || qr?.length === 0) {
       router.push('/') // back to home page
     }
-  }, []);
+  }, [])
 
   return (
     <div className="relative h-52 w-full">
@@ -117,11 +117,11 @@ export default function GiftBoxAnimation() {
       {gift.image ? (
         <div className="flex flex-col items-center">
           <Image src={gift.image} alt="Gift image" />
-          <p className=''>{gift.name}</p>
+          <p className="">{gift.name}</p>
         </div>
       ) : (
         <div className="img-container">
-        { /* <Image className={`kuku ${jump}`} src={kuku} alt="kuku" /> */}
+          {/* <Image className={`kuku ${jump}`} src={kuku} alt="kuku" /> */}
           <button className="box flex items-center justify-center" onClick={animate}>
             <Image src={box} alt="box" />
           </button>
