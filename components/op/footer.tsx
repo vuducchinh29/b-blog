@@ -3,10 +3,10 @@ import Image from 'next/image'
 
 const Footer = () => {
   return (
-    <div className="my-6 flex w-full flex-col items-center space-y-4">
+    <div className="mb-16 flex w-full flex-col items-center space-y-4">
       <a className="group relative w-[500px] max-w-full" href=''>
         <div
-          className="relative z-[2] flex w-[calc(100%-10px)] items-center justify-center rounded-full border-2 border-black bg-blue-600 px-2 py-4 font-semibold 
+          className="relative z-[2] flex w-[calc(100%-10px)] items-center justify-center rounded-full border-2 border-black bg-primary px-2 py-4 font-semibold 
           text-white group-hover:left-1.5 group-hover:top-1.5"
         >
           <Image
@@ -20,7 +20,7 @@ const Footer = () => {
       </a>
       <a className="group relative w-[500px] max-w-full" href=''>
         <div
-          className="relative z-[2] flex w-[calc(100%-10px)] items-center justify-center rounded-full border-2 border-black bg-blue-600 px-2 py-4 font-semibold 
+          className="relative z-[2] flex w-[calc(100%-10px)] items-center justify-center rounded-full border-2 border-black bg-primary px-2 py-4 font-semibold 
           text-white group-hover:left-1.5 group-hover:top-1.5"
         >
           <Image
@@ -34,7 +34,7 @@ const Footer = () => {
       </a>
       <a className="group relative w-[500px] max-w-full" href=''>
         <div
-          className="relative z-[2] flex w-[calc(100%-10px)] items-center justify-center rounded-full border-2 border-black bg-blue-600 px-2 py-4 font-semibold 
+          className="relative z-[2] flex w-[calc(100%-10px)] items-center justify-center rounded-full border-2 border-black bg-primary px-2 py-4 font-semibold 
           text-white group-hover:left-1.5 group-hover:top-1.5"
         >
           <Image
@@ -48,7 +48,7 @@ const Footer = () => {
       </a>
       <a className="group relative w-[500px] max-w-full" href=''>
         <div
-          className="relative z-[2] flex w-[calc(100%-10px)] items-center justify-center rounded-full border-2 border-black bg-blue-600 px-2 py-4 font-semibold 
+          className="relative z-[2] flex w-[calc(100%-10px)] items-center justify-center rounded-full border-2 border-black bg-primary px-2 py-4 font-semibold 
           text-white group-hover:left-1.5 group-hover:top-1.5"
         >
           <Image
@@ -62,7 +62,7 @@ const Footer = () => {
       </a>
       <a className="group relative w-[500px] max-w-full" href=''>
         <div
-          className="relative z-[2] flex w-[calc(100%-10px)] items-center justify-center rounded-full border-2 border-black bg-blue-600 px-2 py-4 font-semibold 
+          className="relative z-[2] flex w-[calc(100%-10px)] items-center justify-center rounded-full border-2 border-black bg-primary px-2 py-4 font-semibold 
           text-white group-hover:left-1.5 group-hover:top-1.5"
         >
           <Image
