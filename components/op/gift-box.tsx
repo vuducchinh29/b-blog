@@ -1,17 +1,17 @@
 'use client'
 
-import { useCallback, useEffect, useReducer, useState } from 'react'
+import { ReactNode, useCallback, useEffect, useReducer, useState } from 'react'
 
 import boxLid from 'app/assets/images/box-lid.png'
 import box from 'app/assets/images/box.png'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import Confetti from './confetti'
 import DemoGift from 'app/assets/images/demo-gift.jpeg'
 import { QRS } from './QR'
 import { useRouter } from 'next/navigation'
 interface Gift {
   name: string
-  image: any
+  image?: StaticImageData
   probability: number
 }
 
@@ -37,7 +37,7 @@ const init_state = {
 export default function GiftBoxAnimation() {
   const router = useRouter()
   const [isDone, setIsDone] = useState<boolean>(false)
-  const [gift, setGift] = useState({ name: '', image: undefined, probability: 1 })
+  const [gift, setGift] = useState<Gift>({ name: '', image: undefined, probability: 1 })
   const [state, setState] = useReducer(
     (state, new_state) => ({
       ...state,
