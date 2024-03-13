@@ -177,51 +177,86 @@ export default function GiftBoxAnimation() {
     const index = gifts.indexOf(gift)
     if (index === 15) {
       return (
-        <p className="text-center text-xl font-bold">
-          May your research lead you to hidden gems. Visit{' '}
-          <a href="https://b.army" className="underline">
-            https://b.army
-          </a>{' '}
-          for supports from us to the Vietnam market
-        </p>
+        <div className="m-auto mt-[100px] flex flex-col items-center lg:max-w-[800px]">
+          <p className="mb-5 text-center text-2xl font-bold lg:text-3xl">
+            Congratulations, you have a blessing from B.ARMY:
+          </p>
+          <p className="text-md mb-1 text-center font-bold lg:text-xl">
+            May your research lead you to hidden gems.
+          </p>
+          <p className="text-md text-center font-bold lg:text-xl">
+            Visit{' '}
+            <a href="https://b.army" className="underline">
+              https://b.army
+            </a>{' '}
+            for supports from us to the Vietnam market
+          </p>
+        </div>
       )
     }
     if (index === 16) {
       return (
-        <p className="text-center text-xl font-bold">
-          May market trends align with your holdings. Visit{' '}
-          <a href="https://b.army" className="underline">
-            https://b.army
-          </a>{' '}
-          for supports from us to the Vietnam market
-        </p>
+        <div className="m-auto mt-[100px] flex flex-col items-center lg:max-w-[800px]">
+          <p className="mb-5 text-center text-2xl font-bold lg:text-3xl">
+            Congratulations, you have a blessing from B.ARMY:
+          </p>
+          <p className="text-md mb-1 text-center font-bold lg:text-xl">
+            May market trends align with your holdings.
+          </p>
+          <p className="text-md text-center font-bold lg:text-xl">
+            Visit{' '}
+            <a href="https://b.army" className="underline">
+              https://b.army
+            </a>{' '}
+            for supports from us to the Vietnam market
+          </p>
+        </div>
       )
     }
     if (index === 18) {
       return (
-        <p className="text-center text-xl font-bold">
-          May you find the perfect entry and exit points. Visit{' '}
-          <a href="https://b.army" className="underline">
-            https://b.army
-          </a>{' '}
-          for supports from us to the Vietnam market
-        </p>
+        <div className="m-auto mt-[100px] flex flex-col items-center lg:max-w-[800px]">
+          <p className="mb-5 text-center text-2xl font-bold lg:text-3xl">
+            Congratulations, you have a blessing from B.ARMY:
+          </p>
+          <p className="text-md mb-1 text-center font-bold lg:text-xl">
+            May you find the perfect entry and exit points.
+          </p>
+          <p className="text-md text-center font-bold lg:text-xl">
+            Visit{' '}
+            <a href="https://b.army" className="underline">
+              https://b.army
+            </a>{' '}
+            for supports from us to the Vietnam market
+          </p>
+        </div>
       )
     }
     if (index === 19) {
       return (
-        <p className="text-center text-xl font-bold">
-          May your crypto journey bring you great fortune! Visit{' '}
-          <a href="https://b.army" className="underline">
-            https://b.army
-          </a>{' '}
-          for supports from us to the Vietnam market
-        </p>
+        <div className="m-auto mt-[100px] flex flex-col items-center lg:max-w-[800px]">
+          <p className="mb-5 text-center text-2xl font-bold lg:text-3xl">
+            Congratulations, you have a blessing from B.ARMY:
+          </p>
+          <p className="text-md mb-1 text-center font-bold lg:text-xl">
+            May your crypto journey bring you great fortune!
+          </p>
+          <p className="text-md text-center font-bold lg:text-xl">
+            Visit{' '}
+            <a href="https://b.army" className="underline">
+              https://b.army
+            </a>{' '}
+            for supports from us to the Vietnam market
+          </p>
+        </div>
       )
     }
     return (
-      <>
-        <p className="text-center text-xl font-bold">{gift.name}</p>
+      <div className="m-auto mt-[100px] flex flex-col items-center lg:max-w-[800px]">
+        <p className="mb-5 text-center text-2xl font-bold lg:text-3xl">
+          Congratulations, you receive a gift from B.ARMY:
+        </p>
+        <p className="text-md text-center font-bold lg:text-xl">{gift.name}</p>
         <p className="mt-2">
           Talk to{' '}
           <a href="https://t.me/CollabwithAri" target="_blank" className="underline">
@@ -229,7 +264,7 @@ export default function GiftBoxAnimation() {
           </a>{' '}
           to claim your gift
         </p>
-      </>
+      </div>
     )
   }
 
@@ -237,9 +272,7 @@ export default function GiftBoxAnimation() {
     <div className="relative mt-20 h-52 w-full">
       <Confetti open={jump === 'jump'} />
       {gift.name ? (
-        <div className="m-auto mt-[100px] flex flex-col items-center lg:max-w-[500px]">
-          {render_gift_name(gift)}
-        </div>
+        <>{render_gift_name(gift)}</>
       ) : (
         <div className="img-container">
           <button className="box flex items-center justify-center" onClick={animate}>
