@@ -71,7 +71,6 @@ export default function GiftBoxAnimation() {
     const seed = getSeedFromURL() + getDailyUnixTime()
     const g = selectGift(seed, gifts)
     setIsDone(true)
-    console.log('gift', g)
     setGift(g)
   }, [])
 
@@ -104,8 +103,7 @@ export default function GiftBoxAnimation() {
   }
 
   const selectGift = (seed: bigint, gifts: Gift[]): Gift => {
-    // const five_ended = seed.toString().slice(-5)
-    const five_ended = '12345'
+    const five_ended = seed.toString().slice(-5)
     if (Number(five_ended) >= 0 && Number(five_ended) <= 199) {
       return gifts[0]
     }
@@ -175,24 +173,72 @@ export default function GiftBoxAnimation() {
     }
   }, [])
 
+  const render_gift_name = (gift: any) => {
+    const index = gifts.indexOf(gift)
+    if (index === 15) {
+      return (
+        <p className="text-center text-xl font-bold">
+          May your research lead you to hidden gems. Visit{' '}
+          <a href="https://b.army" className="underline">
+            https://b.army
+          </a>{' '}
+          for supports from us to the Vietnam market
+        </p>
+      )
+    }
+    if (index === 16) {
+      return (
+        <p className="text-center text-xl font-bold">
+          May market trends align with your holdings. Visit{' '}
+          <a href="https://b.army" className="underline">
+            https://b.army
+          </a>{' '}
+          for supports from us to the Vietnam market
+        </p>
+      )
+    }
+    if (index === 18) {
+      return (
+        <p className="text-center text-xl font-bold">
+          May you find the perfect entry and exit points. Visit{' '}
+          <a href="https://b.army" className="underline">
+            https://b.army
+          </a>{' '}
+          for supports from us to the Vietnam market
+        </p>
+      )
+    }
+    if (index === 19) {
+      return (
+        <p className="text-center text-xl font-bold">
+          May your crypto journey bring you great fortune! Visit{' '}
+          <a href="https://b.army" className="underline">
+            https://b.army
+          </a>{' '}
+          for supports from us to the Vietnam market
+        </p>
+      )
+    }
+    return (
+      <>
+        <p className="text-center text-xl font-bold">{gift.name}</p>
+        <p className="mt-2">
+          Talk to{' '}
+          <a href="https://t.me/CollabwithAri" target="_blank" className="underline">
+            https://t.me/CollabwithAri
+          </a>{' '}
+          to claim your gift
+        </p>
+      </>
+    )
+  }
+
   return (
     <div className="relative mt-20 h-52 w-full">
       <Confetti open={jump === 'jump'} />
       {gift.name ? (
         <div className="m-auto mt-[100px] flex flex-col items-center lg:max-w-[500px]">
-          <p className="text-center text-xl font-bold">{gift.name}</p>
-          {gifts.indexOf(gift) !== 15 &&
-            gifts.indexOf(gift) !== 16 &&
-            gifts.indexOf(gift) !== 18 &&
-            gifts.indexOf(gift) !== 19 && (
-              <p className="mt-2">
-                Talk to{' '}
-                <a href="https://t.me/CollabwithAri" target="_blank" className="underline">
-                  https://t.me/CollabwithAri
-                </a>{' '}
-                to claim your gift
-              </p>
-            )}
+          {render_gift_name(gift)}
         </div>
       ) : (
         <div className="img-container">
