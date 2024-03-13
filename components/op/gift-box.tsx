@@ -173,7 +173,7 @@ export default function GiftBoxAnimation() {
     }
   }, [])
 
-  const render_gift_name = (gift: any) => {
+  const render_gift_name = (gift: Gift) => {
     const index = gifts.indexOf(gift)
     if (index === 15) {
       return (
