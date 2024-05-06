@@ -24,14 +24,8 @@ const data = [
     linkedin: 'https://www.linkedin.com/in/logandefi/',
   },
   {
-    name: 'Ms. Josephine Huong Nguyen',
-    title: 'CEO',
-    image: MsJosephine,
-    linkedin: 'https://www.linkedin.com/in/josephinehuongnguyen/',
-  },
-  {
     name: 'Ms. Daisy M',
-    title: 'Head of Investment',
+    title: 'Chief Investment Officer',
     image: MsDaisy,
     linkedin: 'https://www.linkedin.com/in/daisy-m-0050b199/',
   },
@@ -61,7 +55,7 @@ export const OurPrinciples = () => {
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:flex-row lg:gap-[135px]">
           {data.map((_, idx) => (
             <div
-              className="col-span-1 mb-[20px] text-center text-primary lg:mb-0 lg:text-secondary"
+              className={`${idx === 2 ? 'lg:col-span-2' : 'lg:col-span-1'} mb-[20px] text-center text-primary lg:mb-0 lg:text-secondary`}
               key={idx}
             >
               <Image className="m-auto" src={_.image} alt={_.name} />
