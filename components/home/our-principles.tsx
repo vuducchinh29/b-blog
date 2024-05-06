@@ -55,7 +55,9 @@ export const OurPrinciples = () => {
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:flex-row lg:gap-[135px]">
           {data.map((_, idx) => (
             <div
-              className={`${idx === 2 ? 'lg:col-span-2' : 'lg:col-span-1'} mb-[20px] text-center text-primary lg:mb-0 lg:text-secondary`}
+              className={`${
+                idx === 2 ? 'lg:col-span-2' : 'lg:col-span-1'
+              } mb-[20px] text-center text-primary lg:mb-0 lg:text-secondary`}
               key={idx}
             >
               <Image className="m-auto" src={_.image} alt={_.name} />
