@@ -25,7 +25,7 @@ const data = [
   },
   {
     name: 'Ms. Daisy M',
-    title: 'CEO',
+    title: 'Chief Executive Officer',
     image: MsDaisy,
     linkedin: 'https://www.linkedin.com/in/daisy-m-0050b199/',
   },
