@@ -18,6 +18,7 @@ import FuelNetworkImage from 'app/assets/images/LOGO INVEST/4.FuelNetwork.png'
 import Another1 from 'app/assets/images/LOGO INVEST/6.Another-1.png'
 import OpenOceanImage from 'app/assets/images/LOGO INVEST/8.OpenOcean.png'
 import KIPImage from 'app/assets/images/LOGO INVEST/KIP.svg'
+import PictorImage from 'app/assets/images/LOGO INVEST/23.PictorNetwork.png'
 import Image from 'next/image'
 import { useState } from 'react'
 import 'swiper/css/grid'
@@ -43,6 +44,7 @@ const itemList = [
   { name: 'Unisat', image: Unisat_Image },
   { name: 'BNB48 Club', image: BNB48ClubImage },
   { name: 'DGG Network', image: DGGNetworkImage },
+  { name: 'Pictor Network', image: PictorImage },
   // { name: 'Sovi Universe', image: SoviUniverseImage },
   // { name: 'Kyber Network Crystal', image: KyberNetworkCrystalImage },
   // { name: 'Radiant', image: RadiantImage },
