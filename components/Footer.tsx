@@ -26,7 +26,7 @@ const contacts = [
   {
     name: 'X',
     image: XIcon,
-    link: 'https://twitter.com/BARMYGROUP',
+    link: 'https://twitter.com/',
   },
   // {
   //   name: 'Binance Feed',

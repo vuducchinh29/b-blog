@@ -18,7 +18,7 @@ const Footer = () => {
         </div>
         <div className="absolute right-0 top-2.5 z-[1] h-full w-[calc(100%-10px)] rounded-full bg-black"></div>
       </a>
-      <a className="group relative w-[500px] max-w-full" href="https://twitter.com/BARMYGROUP">
+      <a className="group relative w-[500px] max-w-full" href="https://twitter.com">
         <div
           className="relative z-[2] flex w-[calc(100%-10px)] items-center justify-center rounded-full border-2 border-black bg-primary px-2 py-4 font-semibold 
           text-white group-hover:left-1.5 group-hover:top-1.5"
