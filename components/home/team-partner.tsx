@@ -112,17 +112,6 @@ const partnerList = [
     ],
     content2: '',
   },
-  {
-    avatar: Partner06Img,
-    name: 'KOLSNETWORK',
-    content1: [
-      {
-        c1: '100+',
-        c2: 'Global and Vietnamese Blockchain KOLs on Twitter',
-      },
-    ],
-    content2: '',
-  },
 ]
 
 export const TeamPartner = () => {
