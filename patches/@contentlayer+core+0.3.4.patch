@@ -1,0 +1,26 @@
+diff --git a/node_modules/@contentlayer/core/dist/generation/generate-dotpkg.js b/node_modules/@contentlayer/core/dist/generation/generate-dotpkg.js
+index 0e9f9a2..31c536b 100644
+--- a/node_modules/@contentlayer/core/dist/generation/generate-dotpkg.js
++++ b/node_modules/@contentlayer/core/dist/generation/generate-dotpkg.js
+@@ -45,7 +45,7 @@ const writeFilesForCache = ({ config, cache, schemaDef, targetPath, generationOp
+     const [nodeVersionMajor, nodeVersionMinor] = yield* $(T.succeedWith(() => process.versions.node.split('.').map((_) => parseInt(_, 10))));
+     // NOTE Type assert statements for `.json` files are neccessary from Node v16.14 onwards
+     const needsJsonAssertStatement = nodeVersionMajor > 16 || (nodeVersionMajor === 16 && nodeVersionMinor >= 14);
+-    const assertStatement = needsJsonAssertStatement ? ` assert { type: 'json' }` : '';
++    const assertStatement = needsJsonAssertStatement ? ' with { type: "json" }' : '';
+     const typeNameField = generationOptions.options.fieldOptions.typeFieldName;
+     const dataBarrelFiles = documentDefs.map((docDef) => ({
+         content: makeDataExportFile({
+diff --git a/node_modules/@contentlayer/core/src/generation/generate-dotpkg.ts b/node_modules/@contentlayer/core/src/generation/generate-dotpkg.ts
+index 16c36f8..2a0c60f 100644
+--- a/node_modules/@contentlayer/core/src/generation/generate-dotpkg.ts
++++ b/node_modules/@contentlayer/core/src/generation/generate-dotpkg.ts
+@@ -193,7 +193,7 @@ const writeFilesForCache = ({
+ 
+       // NOTE Type assert statements for `.json` files are neccessary from Node v16.14 onwards
+       const needsJsonAssertStatement = nodeVersionMajor > 16 || (nodeVersionMajor === 16 && nodeVersionMinor >= 14)
+-      const assertStatement = needsJsonAssertStatement ? ` assert { type: 'json' }` : ''
++      const assertStatement = needsJsonAssertStatement ? ` with { type: 'json' }` : ''
+ 
+       const typeNameField = generationOptions.options.fieldOptions.typeFieldName
+       const dataBarrelFiles = documentDefs.map((docDef) => ({

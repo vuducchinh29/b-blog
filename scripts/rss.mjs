@@ -1,9 +1,13 @@
-import { writeFileSync, mkdirSync } from 'fs'
-import path from 'path'
+import { writeFileSync, mkdirSync, readFileSync } from 'fs'
+import { fileURLToPath } from 'url'
+import path, { dirname, join } from 'path'
 import GithubSlugger from 'github-slugger'
 import { escape } from 'pliny/utils/htmlEscaper.js'
 import siteMetadata from '../data/siteMetadata.js'
-import tagData from '../app/tag-data.json' assert { type: 'json' }
+// import tagData from '../app/tag-data.json' with { type: 'json' }
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+const tagData = JSON.parse(readFileSync(join(__dirname, '../app/tag-data.json'), 'utf-8'))
 import { allBlogs } from '../.contentlayer/generated/index.mjs'
 import { sortPosts } from 'pliny/utils/contentlayer.js'
 
@@ -37,7 +41,6 @@ const generateRss = (config, posts, page = 'feed.xml') => `
 
 async function generateRSS(config, allBlogs, page = 'feed.xml') {
   const publishPosts = allBlogs.filter((post) => post.draft !== true)
-  // RSS for blog post
   if (publishPosts.length > 0) {
     const rss = generateRss(config, sortPosts(publishPosts))
     writeFileSync(`./public/${page}`, rss)
